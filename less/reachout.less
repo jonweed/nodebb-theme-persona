@@ -1,0 +1,113 @@
+@import "bootstrap/variables.less";
+@import "bootstrap/mixins.less";
+
+@import "reachout/navbar.less";
+@import "reachout/topic.less";
+@import "reachout/alerts.less";
+
+
+
+#header-menu li a:link {
+	span.focus {
+		outline: 0;
+		position: absolute;
+	}
+	
+	&:active:focus {
+		outline: 0;
+	}
+}
+
+
+
+
+.header {
+	.pagination-block {
+		.progress-container {
+			background: #aaa;
+
+			.progress-bar {
+				background-color: #fff;
+			}
+		}
+	}
+}
+
+
+@media (max-width: @screen-md-max) {
+	#menu {
+		&.guest {
+			padding-top:0;
+			.menu-profile {
+				display:none;
+			}
+		}
+	}
+
+	.menu-section-list {
+		a, button {
+			&:hover {
+				color: #fff;
+			}
+		}
+	}
+
+}
+
+
+
+
+
+
+
+.button-mod(@color; @background; @border) {
+  color: @color;
+  #gradient > .vertical(lighten(@background, 5%), darken(@background, 5%), 0%, 100%);
+  background-color: @background;
+  border-color: @border;
+
+  &:hover,
+  &:focus,
+  &.focus,
+  &:active,
+  &.active,
+  .open > .dropdown-toggle& {
+    color: @color;
+    background-color: darken(@background, 5%);
+        border-color: darken(@border, 5%);
+  }
+  &:active,
+  &.active,
+  .open > .dropdown-toggle& {
+    background-image: none;
+    background-color: darken(@background, 2%);
+	border-color: darken(@border, 2%);
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      background-color: @background;
+          border-color: @border;
+    }
+  }
+
+  .badge {
+    color: @background;
+    background-color: @color;
+  }
+}
+
+
+@btn-reply-color:              #333;
+@btn-reply-bg:                 #fff;
+@btn-reply-border:             lighten(@btn-reply-bg, 5%);
+
+.btn-reply {
+  .button-mod(@btn-reply-color; @btn-reply-bg; @btn-reply-border);
+}
