@@ -2,6 +2,6 @@
     "id": "nodebb-theme-reachout",
     "name": "reachout",
     "description": "The default theme for NodeBB. Uses a standard approach to forum design.",
-    "url": "https://github.com/psychobunny/nodebb-theme-persona",
+    "url": "",
     "screenshot": "screenshot.png"
 }
