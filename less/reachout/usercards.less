@@ -1,0 +1,114 @@
+//
+// usercards
+// --------------------------------------------------
+
+
+.ro-usercard {
+	position: absolute;
+	width: 100%;
+	background: black;
+	z-index: 1;
+	display: flex;
+	max-width: 400px;
+	top: 0;
+	left: 0;
+
+
+	.ro-usercard-col1 {
+		flex:none;
+		position: relative;
+
+		.ro-usercard-picture {
+			width: 120px;
+			height: 120px;
+			font-size: 60px;
+			line-height: 120px;
+			text-align:center;
+			color: white;
+		}
+	}
+
+	.ro-usercard-col2 {
+		flex:2;
+		padding: 10px;
+		line-height: 20px;
+
+		.ro-usercard-name {
+			.usercard-name {
+				color:white;
+				font-weight:700;
+				font-size:20px;
+			}
+
+			.usercard-username {
+				color:white;
+				font-size:15px;
+			}
+		}
+
+		.ro-usercard-info {
+			text-align:center;  
+			font-size:15px;
+			display:flex;
+			margin-top: 10px;
+			color:white;
+
+			.ro-usercard-posts {
+				flex: 1;
+
+				> small {
+					display:block;
+				}
+
+				> span {
+				  font-size:24px;
+				}
+			}
+
+
+			.ro-usercard-reputation {
+			  flex: 1;
+
+				> small {
+					display:block;
+				}
+
+				> span {
+					font-size:24px;
+				}
+			}
+
+			.ro-usercard-follow {
+				flex: 1;
+				font-size: 21px;
+			}			
+		}
+	}
+}
+
+
+
+
+@media (max-width: 380px) {
+	.ro-usercard {
+		.ro-usercard-col1 {
+			.ro-usercard-picture {
+				margin: 10px 0 0 10px;
+				width: 40px;
+				height: 40px;
+				font-size: 20px;
+				line-height: 40px;
+				border-radius: 50%;
+			}
+		}
+
+		.ro-usercard-col2 {
+			.ro-usercard-name {
+			}
+
+			.ro-usercard-info {
+				margin-left:-50px;
+			}
+		}
+	}
+}
