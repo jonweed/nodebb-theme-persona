@@ -13,7 +13,7 @@
 	"scripts": [
 		"lib/persona.js",
 		"lib/modules/nprogress.js",
-		"lib/modules/autohidingnavbar.min.js",
+		"lib/modules/autoHideNavbar.js",
 		"lib/modules/quickreply.js"
 	],
 	"modules": {
