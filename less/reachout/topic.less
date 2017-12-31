@@ -126,6 +126,7 @@
 		
 		.ro-post-votes {
 			flex: none;
+			margin-left:10px;
 
 			> * {
 				display:inline-block;
@@ -138,14 +139,17 @@
 			[component="post/downvote"].btn-votes, [component="post/upvote"].btn-votes {
 				border:none;
 				background-color:transparent;
-				padding:0 6px;
+				padding:0 10px;
 				color:#c8c8c8;
 
+
+				&[component="post/upvote"].upvoted,
 				&[component="post/upvote"]:hover,
 				&[component="post/upvote"]:focus {
 					color:green;
 				}
 
+				&[component="post/downvote"].downvoted,
 				&[component="post/downvote"]:hover,
 				&[component="post/downvote"]:focus {
 					color:red;
@@ -250,19 +254,12 @@
 
 	.topic .posts [component="post"] .postbox {
 		.ro-post-header {
-			margin-top: 41px;
+			margin-top: 55px;
 			
 			.ro-post-user-picture {
 				position: absolute;
 				top: 16px;
 				left: 16px;
-
-				.ro-post-user-icon {
-					line-height: 36px;
-					font-size: 18px;
-					width: 36px;
-					height: 36px;
-				}
 			}
 			
 			.ro-post-heading {
