@@ -3,7 +3,19 @@
 	<div class="ro-post-header">
 
 		<div class="ro-post-user-picture">
-			<a href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
+			<a href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->"
+			<!-- IF posts.user.userslug -->
+			data-uid="{posts.user.uid}"
+			data-status="{posts.user.status}"
+			data-banned="{posts.user.banned}"
+			data-username="{posts.user.username}"
+			data-userslug="{posts.user.userslug}"
+			data-picture="{posts.user.picture}"
+			data-icon:text="{posts.user.icon:text}"
+			data-icon:bgColor="{posts.user.icon:bgColor}"
+			data-postcount="{posts.user.postcount}"
+			data-reputation="{posts.user.reputation}"
+			<!-- ENDIF posts.user.userslug -->>
 				<!-- IF posts.user.picture -->
 				<img component="user/picture" data-uid="{posts.user.uid}" src="{posts.user.picture}" align="left" itemprop="image" />
 				<!-- ELSE -->
