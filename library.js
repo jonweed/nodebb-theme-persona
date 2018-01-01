@@ -18,7 +18,12 @@ library.init = function(params, callback) {
 };
 
 library.addToIndex = function(data, callback) {
-	if (data.postData.toPid) { data.postData.toIndex = data.postData.toPid-1; }
+	for (var i=0,ii=data.posts.length; i < ii; i++) {
+		if (data.posts[i].toPid) {
+			data.posts[i].toIndex = data.posts[i].toPid-1;
+		}
+	}
+
 	callback(null, data);
 }
 

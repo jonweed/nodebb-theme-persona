@@ -8,7 +8,7 @@
 		{ "hook": "static:app.load", "method": "init" },
 		{ "hook": "filter:admin.header.build", "method": "addAdminNavigation" },
 		{ "hook": "filter:topic.build", "method": "addUserToTopic" },
-		{ "hook": "filter:parse.post", "method": "addToIndex" },
+		{ "hook": "filter:topics.addPostData", "method": "addToIndex" },
 		{ "hook": "filter:meta.getLinkTags", "method": "getLinkTags" }
 	],
 	"scripts": [
