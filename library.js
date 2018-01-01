@@ -4,6 +4,7 @@ var striptags = require('striptags');
 var meta = module.parent.require('./meta');
 var user = module.parent.require('./user');
 
+
 var library = {};
 
 library.init = function(params, callback) {
@@ -15,6 +16,11 @@ library.init = function(params, callback) {
 
 	callback();
 };
+
+library.addToIndex = function(data, callback) {
+	if (data.postData.toPid) { data.postData.toIndex = data.postData.toPid-1; }
+	callback(null, data);
+}
 
 library.addAdminNavigation = function(header, callback) {
 	header.plugins.push({
