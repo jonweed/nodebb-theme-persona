@@ -4,14 +4,14 @@
 
 		<div class="ro-post-user-picture" component="user/picture" data-uid="{posts.user.uid}">
 			<a href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
-				<!-- IF posts.user.picture -->
-				<img src="{posts.user.picture}" align="left" itemprop="image" />
-				<!-- ELSE -->
 				<div data-uid="{posts.user.uid}" class="ro-post-user-icon" style="background-color: {posts.user.icon:bgColor};">
+					<!-- IF posts.user.picture -->
+					<img data-uid="{posts.user.uid}" class="ro-post-user-icon" src="{posts.user.picture}" align="left" itemprop="image" />
+					<!-- ELSE -->
 					{posts.user.icon:text}
-					<i component="user/status" class="fa fa-circle status ro-status {posts.user.status}" title="[[global:{posts.user.status}]]"></i>
+					<!-- ENDIF posts.user.picture -->
+					<i component="user/status" class="fa fa-circle status ro-status {posts.user.status}" title="[[global:{posts.user.status}]]"></i>				
 				</div>
-				<!-- ENDIF posts.user.picture -->
 			</a>
 		</div><!-- div.ro-post-user -->
 

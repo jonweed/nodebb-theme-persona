@@ -1,10 +1,13 @@
 <div class="ro-usercard">
 	<div class="ro-usercard-col1">
 		<a href="{config.relative_path}/user/{userslug}">
-			<!-- IF picture -->
-			<div class="ro-usercard-picture" style="background-image:url({picture})"></div>
-			<!-- ELSE -->
-			<div class="ro-usercard-picture" style="background-color: {icon:bgColor};">{icon:text}</div>
+			<div class="ro-usercard-picture" style="background-color: {icon:bgColor};">
+				<!-- IF picture -->
+				<img src="{picture}" align="left" itemprop="image" />
+				<!-- ELSE -->
+				{icon:text}				
+				<!-- ENDIF picture -->
+			</div>
 		</a>
 	</div>
 	<div class="ro-usercard-col2">
