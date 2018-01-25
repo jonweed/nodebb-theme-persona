@@ -16,6 +16,12 @@
 		padding:0;
 		background: transparent;
 		align-items:stretch;
+
+		@media (max-width: @screen-xs-max) {
+			border-radius: .25rem .25rem 0 0;
+			background: #fff;
+			padding: 15px 0 7px 15px;
+		}
 	}
 
 	> .ro-box {
@@ -28,6 +34,14 @@
 		border-radius: 0 0 @ro-border-radius @ro-border-radius;
 		margin-left:65px;
 		border-top:2px solid;
+
+		@media (max-width: @screen-sm-max) {
+			margin-left:55px;
+		}
+
+		@media (max-width: @screen-xs-max) {
+			margin-left:0;
+		}
 	}
 }
 
@@ -52,9 +66,30 @@
 			color: #fff;
 			text-align: center;
 			box-shadow:0 1px 3px 0 #92989c;
+
+			@media (max-width: @screen-sm-max) {
+				width: 40px;
+				height: 40px;
+				line-height: 40px;
+				font-size: 20px;
+			}
+
+			@media (max-width: @screen-xs-max) {
+				width: 30px;
+				height: 30px;
+				line-height: 30px;
+				font-size: 15px;
+			}
 		}
 		
-		&:before { .ro-arrow(right,10px,topright,50%,-15px,#fff); margin-top:-10px; }
+		&:before {
+			.ro-arrow(right,10px,topright,50%,-15px,#fff);
+			margin-top:-10px;
+
+			@media (max-width: @screen-xs-max) {
+				display:none;
+			}			
+		}
 	}
 
 	> .ro-head {
@@ -74,7 +109,6 @@
 				display:inline-block;
 				font-size:16px;
 			}
-			
 		}
 
 		> .ro-stats {
@@ -96,10 +130,25 @@
 				@media (max-width: @screen-sm-max) {
 					&.views,  &.votes { display:none; }
 				}
+
+				@media (max-width: 360px) {
+					flex-flow:row nowrap;
+					> span {
+						margin-right:4px;
+					}				
+				}
 			}
-			
 		}
-	}	
+
+		@media (max-width: @screen-xs-max) {
+			padding:0;
+			background:transparent;
+		}
+
+		@media (max-width: 360px) {
+			flex-flow:column nowrap;
+		}
+	}
 }
 
 
@@ -204,67 +253,6 @@
 			display:none;
 		}
 	}
-}
-
-
-
-[component="category/topic"].ro-panel-category.auto {
-	@media (max-width: @screen-sm-max) {
-		> .ro-bar > .ro-icon > .ro-user-icon {
-			width: 40px;
-			height: 40px;
-			line-height: 40px;
-			font-size: 20px;
-		}
-		
-		> .ro-box {
-			margin-left:55px;
-		}
-	}
-
-	@media (max-width: @screen-xs-max) {
-		> .ro-bar {
-			border-radius: .25rem .25rem 0 0;
-			background: #fff;
-			padding: 15px 0 7px 15px;
-			
-			> .ro-icon {
-				&:before { display:none; }
-
-				> .ro-user-icon {
-					width: 30px;
-					height: 30px;
-					line-height: 30px;
-					font-size: 15px;
-				}
-			}
-
-			> .ro-head {
-				padding:0;
-				background:transparent;
-			}			
-		}
-		
-		> .ro-box {
-			margin-left:0;
-		}
-	}
-
-	@media (max-width: 360px) {
-		> .ro-bar > .ro-head {
-			flex-flow:column nowrap;
-
-			> .ro-stats > .stats {
-				flex-flow:row nowrap;
-			
-				> span {
-					margin-right:4px;
-				}
-			}
-		}
-	}
-
-
 }
 
 

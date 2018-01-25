@@ -86,6 +86,18 @@
 				flex:0 0 auto;
 			}
 		}
+
+		@media (max-width: 360px) {
+			flex-flow:column nowrap;
+
+			> .ro-stats > .stats {
+				flex-flow:row nowrap;
+			
+				> span {
+					margin-right:4px;
+				}
+			}
+		}
 	}
 }
 
@@ -189,24 +201,6 @@
 		
 		> .ro-toggle-btn > .toggle {
 			display:none;
-		}
-	}
-}
-
-
-
-[component="categories/category"].ro-panel-category-item.auto {
-	@media (max-width: 360px) {
-		> .ro-bar > .ro-head {
-			flex-flow:column nowrap;
-
-			> .ro-stats > .stats {
-				flex-flow:row nowrap;
-			
-				> span {
-					margin-right:4px;
-				}
-			}
 		}
 	}
 }

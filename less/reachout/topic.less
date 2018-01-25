@@ -7,6 +7,10 @@
 	align-items: stretch;
 	margin-bottom: @ro-spacing;
 	padding: 0;
+	
+	@media (max-width: @screen-sm-max) {
+		flex-flow: column nowrap;
+	}
 
 	> .ro-bar {
 		display: flex;
@@ -16,6 +20,14 @@
 		flex-flow: row nowrap;
 		border-radius: @ro-border-radius @ro-border-radius 0 0;
 		align-items:stretch;
+
+		@media (max-width: @screen-sm-max) {
+			flex: 0 0 auto;
+		}
+
+		@media (max-width: @screen-xs-max) {
+			background:@ro-bar-color;
+		}
 	}
 
 	> .ro-box {
@@ -27,6 +39,16 @@
 		background: #fff;
 		border-radius: 0 @ro-border-radius @ro-border-radius 0;
 		margin-left:0;
+
+		@media (max-width: @screen-sm-max) {
+			flex:1 1 auto;
+			margin-left:55px;
+			border-radius:0 0 @ro-border-radius @ro-border-radius;		
+		}
+		
+		@media (max-width: @screen-xs-max) {
+			margin-left: 0;
+		}
 	}
 
 	.ro-spinner {
@@ -61,6 +83,19 @@
 		margin-right:15px;
 		align-self:flex-start;
 
+		&:before { .ro-arrow(right,10px,topright,50%,-15px,@ro-bar-color); margin-top:-10px; }		
+
+		@media (max-width: @screen-sm-max) {
+			flex: 0 0 40px;
+		}
+
+		@media (max-width: @screen-xs-max) {		
+			flex: 0 0 24px;
+			margin:6px 0 6px 10px;
+			align-self:center;
+			&:before { display:none; }
+		}
+
 		> .ro-user-icon {
 			display: block;
 			cursor: pointer;
@@ -85,9 +120,32 @@
 				border: 2px solid @body-bg;
 				color: transparent;
 			}
-		}
 
-		&:before { .ro-arrow(right,10px,topright,50%,-15px,@ro-bar-color); margin-top:-10px; }
+			@media (max-width: @screen-sm-max) {
+				width: 40px;
+				height: 40px;
+				line-height: 40px;
+				font-size: 20px;
+
+				> i {
+					width: 12px;
+					height: 12px;
+				}
+			}
+
+			@media (max-width: @screen-xs-max) {
+				width: 24px;
+				height: 24px;
+				line-height: 24px;
+				font-size: 12px;
+				
+				> i {
+					border-color: @ro-bar-color;
+					width: 9px;
+					height: 9px;
+				}
+			}
+		}
 	}
 
 	> .ro-head {
@@ -99,6 +157,16 @@
 		padding: @ro-padding 0 0 @ro-padding;
 		border-radius: @ro-border-radius 0 0 @ro-border-radius;
 		background:@ro-bar-color;
+
+		@media (max-width: @screen-sm-max) {
+			flex-flow:row nowrap;
+			padding:0;
+			border-radius:@ro-border-radius @ro-border-radius 0 0;		
+		}
+		
+		@media (max-width: @screen-xs-max) {
+			background:transparent;
+		}
 		
 		> .ro-block {
 			display: flex;
@@ -159,6 +227,18 @@
 					font-size:80%;
 				}
 			}
+
+			@media (max-width: @screen-sm-max) {
+				flex-flow: row wrap;
+				flex: 1 1 auto;
+				margin: 0;
+				padding: @ro-padding-sm 0 5px @ro-padding-sm;
+				align-items:center;
+				
+				> * {
+					margin:0 @ro-padding-sm 5px 0;
+				}
+			}
 		}
 
 		.ro-vote {
@@ -166,6 +246,14 @@
 			flex-direction:row;
 			align-items:stretch;
 			margin:0 @ro-padding @ro-padding 0;
+			
+			@media (max-width: @screen-sm-max) {
+				margin:0 @ro-padding-sm 0 0;
+			}
+
+			@media (max-width: @screen-xs-max) {
+				display:none;
+			}
 
 			> .ro-upvote, > .ro-downvote {
 				color: @ro-vote-color;
@@ -200,11 +288,6 @@
 				height: 40px;
 				line-height: 40px;
 			}
-
-			// SMALL
-			@media (max-width: @screen-xs-max) {
-				display:none;
-			}
 		}
 
 
@@ -214,6 +297,10 @@
 			flex:0 0 auto;
 			cursor:pointer;
 			padding: 0 10px;
+
+			@media (max-width: @screen-xs-max) {
+				display:flex;
+			}
 
 			> * {
 				height: 40px;
@@ -243,10 +330,6 @@
 				> i {
 					color:@brand-primary;
 				}
-			}
-
-			@media (max-width: @screen-xs-max) {
-				display:flex;
 			}
 		}
 	}
@@ -330,6 +413,11 @@
 	> .ro-body {
 		padding:@ro-padding 0 0 @ro-padding;
 		flex:1 0 auto;
+		
+		@media (max-width: @screen-xs-max) {
+			position:relative;
+			&:before { .ro-arrow(top,8px,topleft,0,15px,@ro-bar-color); }		
+		}
 
 		> [component="post/content"] {
 			margin:0 @ro-padding @ro-padding 0;
@@ -354,99 +442,6 @@
 	}
 }
 
-
-
-[component="post"] > .ro-panel-post {
-	@media (max-width: @screen-sm-max) {
-		flex-flow: column nowrap;
-
-		> .ro-bar {
-			flex: 0 0 auto;
-
-			[component="user/picture"] {
-				flex: 0 0 40px;
-				.ro-user-icon {
-					width: 40px;
-					height: 40px;
-					line-height: 40px;
-					font-size: 20px;
-					> i {
-						width: 12px;
-						height: 12px;
-					}					
-				}
-			}
-			
-			> .ro-head {
-				flex-flow:row nowrap;
-				padding:0;
-				border-radius:@ro-border-radius @ro-border-radius 0 0;
-
-				> .ro-block {
-					flex-flow: row wrap;
-					flex: 1 1 auto;
-					margin: 0;
-					padding: @ro-padding-sm 0 5px @ro-padding-sm;
-					align-items:center;
-					
-					> * {
-						margin:0 @ro-padding-sm 5px 0;
-					}
-				}
-				
-				> .ro-vote { margin:0 @ro-padding-sm 0 0; }
-			}
-		}
-
-		
-		> .ro-box {
-			flex:1 1 auto;
-			margin-left:55px;
-			border-radius:0 0 @ro-border-radius @ro-border-radius;
-		}
-	}
-
-	@media (max-width: @screen-xs-max) {
-		> .ro-bar {
-			background:@ro-bar-color;
-
-			[component="user/picture"] {
-				flex: 0 0 24px;
-				margin:6px 0 6px 10px;
-				align-self:center;
-				
-				&:before { display:none; }
-
-				.ro-user-icon {
-					width: 24px;
-					height: 24px;
-					line-height: 24px;
-					font-size: 12px;
-					
-					> i {
-						border-color: @ro-bar-color;
-						width: 9px;
-						height: 9px;
-					}
-				}
-			}
-			
-			> .ro-head {
-				background:transparent;
-			}
-		}
-		
-		> .ro-box {
-			margin-left: 0;
-
-			> .ro-body{
-				position:relative;
-				&:before { .ro-arrow(top,8px,topleft,0,15px,@ro-bar-color); }
-			}
-		}
-	}
-}
-    
 
 
 [component="post"].highlight > .ro-panel-post > .ro-box {
