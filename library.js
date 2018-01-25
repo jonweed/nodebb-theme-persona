@@ -3,7 +3,7 @@
 var striptags = require('striptags');
 var meta = module.parent.require('./meta');
 var user = module.parent.require('./user');
-
+var colorConvert = require('color-convert');
 
 var library = {};
 
@@ -17,7 +17,22 @@ library.init = function(params, callback) {
 	callback();
 };
 
-library.addToIndex = function(data, callback) {
+library.bgColorImage = function(hex) {
+    var c = colorConvert.hex.hsl(hex),h=c[0],s=c[1]+'%',l1=c[2]-10+'%',l2=c[2]+10+'%';
+    return ['linear-gradient(45deg,hsl(',[h,s,l1].join(','),'),hsl(',[h,s,l2].join(','),'))'].join('');
+};
+
+library.addUserData = function (data, callback) {
+	for (var i=0, ii=data.length; i < ii; i++) {
+		if (data[i]['icon:bgColor']) {
+			data[i]['icon:bgColorImage'] = library.bgColorImage(data[i]['icon:bgColor']);
+		}
+	}
+
+	callback(null, data);
+};
+
+library.addPostData = function(data, callback) {
 	for (var i=0,ii=data.posts.length; i < ii; i++) {
 		if (data.posts[i].toPid) {
 			data.posts[i].toIndex = data.posts[i].toPid-1;
@@ -25,7 +40,7 @@ library.addToIndex = function(data, callback) {
 	}
 
 	callback(null, data);
-}
+};
 
 library.addAdminNavigation = function(header, callback) {
 	header.plugins.push({
@@ -41,6 +56,10 @@ library.getTeasers = function(data, callback) {
 	data.teasers.forEach(function(teaser) {
 		if (teaser && teaser.content) {
 			teaser.content = striptags(teaser.content, ['img']);
+			if (teaser.content.length > 300) {
+				teaser.content = teaser.content.substr(0, 300);
+				teaser.content = teaser.content.substr(0, Math.min(teaser.content.length, teaser.content.lastIndexOf(" ")))+'...';
+			}
 		}
 	});
 	callback(null, data);

@@ -4,15 +4,10 @@
 
 
 .ro-usercard {
-	position: absolute;
 	width: 100%;
-	background: black;
-	z-index: 1;
+	background: #000;
+	color: white;
 	display: flex;
-	max-width: 400px;
-	top: 0;
-	left: 0;
-
 
 	.ro-usercard-col1 {
 		flex:none;
@@ -39,14 +34,17 @@
 		line-height: 20px;
 
 		.ro-usercard-name {
+		
+			a {
+				color:inherit;
+			}
+		
 			.usercard-name {
-				color:white;
 				font-weight:700;
 				font-size:20px;
 			}
 
 			.usercard-username {
-				color:white;
 				font-size:15px;
 			}
 		}
@@ -56,7 +54,6 @@
 			font-size:15px;
 			display:flex;
 			margin-top: 10px;
-			color:white;
 
 			.ro-usercard-posts {
 				flex: 1;

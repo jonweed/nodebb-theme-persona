@@ -8,13 +8,14 @@
 		{ "hook": "static:app.load", "method": "init" },
 		{ "hook": "filter:admin.header.build", "method": "addAdminNavigation" },
 		{ "hook": "filter:topic.build", "method": "addUserToTopic" },
-		{ "hook": "filter:topics.addPostData", "method": "addToIndex" },
+		{ "hook": "filter:topics.addPostData", "method": "addPostData" },
+		{ "hook": "filter:users.get", "method": "addUserData" },
 		{ "hook": "filter:meta.getLinkTags", "method": "getLinkTags" }
 	],
 	"scripts": [
 		"lib/persona.js",
 		"lib/modules/nprogress.js",
-		"lib/modules/autoHideNavbar.js",
+		"lib/modules/autohidingnavbar.min.js",
 		"lib/modules/quickreply.js"
 	],
 	"modules": {

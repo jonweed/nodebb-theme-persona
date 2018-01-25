@@ -1,278 +1,524 @@
 //
-// Topic
-// --------------------------------------------------
+// PANEL POST
+//
+[component="post"] > .ro-panel-post {
+	display: flex;
+	flex-flow:row nowrap;
+	align-items: stretch;
+	margin-bottom: @ro-spacing;
+	padding: 0;
 
-.topic .posts [component="post"] {
-
-	.postbox {
-		margin-bottom: 8px;
-		background-color: #fff;
-		border-radius: 2px;
-		border:1px solid #fff;
-		padding: 15px;
-		box-shadow: 0 1px 3px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.04);
-		transition: .75s ease-in-out all;
+	> .ro-bar {
+		display: flex;
+		flex: 0 0 215px;
+		background: transparent;
+		padding: 0;
+		flex-flow: row nowrap;
+		border-radius: @ro-border-radius @ro-border-radius 0 0;
+		align-items:stretch;
 	}
 
-	[component="post/replies"] {
-		border-left: 4px solid rgba(0,0,0,0.1);
-		padding-left: 0;
-		padding-top: 20px;
-		margin-left:87px;
+	> .ro-box {
+		display: flex;
+		flex:1 1 0px;
+		flex-flow: column nowrap;
+		align-items: stretch;
+		position:relative;
+		background: #fff;
+		border-radius: 0 @ro-border-radius @ro-border-radius 0;
+		margin-left:0;
+	}
+
+	.ro-spinner {
+		opacity:0;
+		line-height: 14px;
+		height: 14px;
+		width: 14px;
+		box-shadow: none;
+		font-size: 14px;
+		text-align: center;
+		position: absolute;
+		top: 4px;
+		right: 4px;
+
+		color: @ro-spinner-color;
+		transition:0.2s ease opacity;
+	}
+	
+	&.ro-loading .ro-spinner {
+		opacity:1;
+		animation: fa-spin 2s infinite linear;
+	}
+}
+
+
+
+[component="post"] > .ro-panel-post > .ro-bar {
+
+	[component="user/picture"] {
+		flex: 0 0 50px;
 		position: relative;
-		margin-top:0;
-		top: -8px;
+		margin-right:15px;
+		align-self:flex-start;
 
-		[component="post"] {
-			.postbox {
-				box-shadow: none;
-				border-color: rgba(0,0,0,0.1);
-				border-left-width: 0;
-				border-radius: 0 2px 2px 0;
-			}
-
-			&:last-child {
-				margin-bottom:0;
-			}
-		}
-	}
-
-
-	&.highlight {
-		> .postbox {
-			border-color: #006FCF;
-			background-color: #e3f2fc;
-
-		}
-	}
-	
-	.post-bar {
-		> hr {
-			border-top: 2px dashed #ddd;
-		}
-	}
-	
-}
-
-
-
-.topic .posts [component="post"] .postbox {
-
-	.ro-post-header {
-		display:flex;
-
-		.ro-post-user-picture {
-			flex: none;
-			height: 0;
-
-			.ro-post-user-icon {
-				position:relative;
-				border-radius: 50%;
-				line-height: 50px;
-				font-size: 25px;
-				width: 50px;
-				height: 50px;
-				color: white;
-				text-align: center;
-				font-weight: 700;
-
-				.ro-status {
-					position: absolute;
-					top: 2px;
-					right: -2px;
-					font-size: 14px;
-				}
-			}
-		}
-
-		.ro-post-heading {
-			flex: 1;
-			margin-left:15px;
-		
-			.ro-post-username {
-				font-weight: 700;
-				font-size: 16px;
-			}
-
-			[component="post/parent"] {
-				font-size:10px;
-			}
-		
-
-			.ro-post-permalink {
-				font-size: 12px;
-				padding: 0;
-				border-radius: 2px;
-				margin-top:4px;
-
-				a {
-					color:#777;
-					&:active, &:focus, &:hover {
-						text-decoration:none;
-						color:#4892c7;
-					}
-
-					i {
-						color:#4892c7;
-						margin-right:4px;
-					}
-				}
-			}
-		
-
-		}
-
-		
-		
-		.ro-post-votes {
-			flex: none;
-			margin-left:10px;
-
-			> * {
-				display:inline-block;
-				font-size:18px;
-				text-align:center;
-			}
-
-
-
-			[component="post/downvote"].btn-votes, [component="post/upvote"].btn-votes {
-				border:none;
-				background-color:transparent;
-				padding:0 10px;
-				color:#c8c8c8;
-
-
-				&[component="post/upvote"].upvoted,
-				&[component="post/upvote"]:hover,
-				&[component="post/upvote"]:focus {
-					color:green;
-				}
-
-				&[component="post/downvote"].downvoted,
-				&[component="post/downvote"]:hover,
-				&[component="post/downvote"]:focus {
-					color:red;
-				}
-			}
-
-
-
-			[component="post/vote-count"] {
-				color:#333;
-				font-size:12px;
-				font-weight:700;
-			}	
-		}
-	
-	}
-
-
-	[component="post/content"].ro-post-content {
-		display:block;
-		margin:15px 65px 20px 65px;
-		font-size: 15px;
-		line-height: 22px;
-	}
-
-
-	.ro-post-footer {
-		[component="post/reply-count"] {
-			margin-left:65px;
-		}
-
-		[component="post/reply"] {
+		> .ro-user-icon {
+			display: block;
+			cursor: pointer;
+			position: relative;
+			text-align: center;
+			color: #fff;
+			border-radius: 50%;
+			box-shadow: 0 1px 3px 0 #92989c;
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+			font-size: 25px;
+			
 			> i {
-				margin-right: 4px;
-			}
-		}
-	}
-	
-}
-
-
-@media (max-width: @screen-sm-max) {
-
-	.topic .posts [component="post"] .postbox {
-		.ro-post-header {
-
-			.ro-post-user-picture .ro-post-user-icon {
-				line-height: 40px;
-				font-size: 20px;
-				width: 40px;
-				height: 40px;
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 14px;
+				height: 14px;
+				border-radius: 50%;
+				background: linear-gradient(0deg,#4caf50,#47a34b);
+				border: 2px solid @body-bg;
+				color: transparent;
 			}
 		}
 
-		[component="post/content"].ro-post-content {
-			margin-left: 0;
-			margin-right: 0;
-		}
-
-		.ro-post-footer [component="post/reply-count"] {
-			margin-left: 0;
-			margin-right: 0;
-		}
+		&:before { .ro-arrow(right,10px,topright,50%,-15px,@ro-bar-color); margin-top:-10px; }
 	}
 
-	.topic .posts [component="post"] [component="post/replies"] {
-		margin-left:22px;
-	}
-}
-
-
-
-
-@media (max-width: 479px) {
-	.ro-hidden-xxs {
-		display:none;
-	}
-
-	.topic .posts [component="post"] .postbox {
-		.ro-post-footer {
+	> .ro-head {
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;	
+		flex: 1 1 auto;
+		background: #eff4f7;
+		padding: @ro-padding 0 0 @ro-padding;
+		border-radius: @ro-border-radius 0 0 @ro-border-radius;
+		background:@ro-bar-color;
 		
-			button[component="post/reply"] {
-				padding:5px 15px;
+		> .ro-block {
+			display: flex;
+			flex-flow: column nowrap;
+			align-items:flex-start;
+			margin:0 @ro-padding @ro-padding 0;
+			
+			> * { display:inline-block; }
+
+			> .ro-username {
+				font-weight: 500;
+				text-shadow: 0 1px 2px #c2c3c7;
+			}
+			
+			> .ro-group-label {
+				> i { margin-right:4px; }
+
+				> span {
+					display: inline-block;
+					vertical-align: 0;
+					white-space: pre-wrap;
+					font-size:80%;
+					font-weight: 300;
+					color: inherit;
+					text-transform: uppercase;
+				}
+			}
+			
+			> div {
+				> .ro-permalink {
+					color: #747577;
+					vertical-align: 0;
+					font-weight: 300;
+					font-size:90%;
+					margin-right:4px;
+				}
+
+				> span > .ro-edit-icon {
+					vertical-align: 0;
+					color: #d17519;
+				}
+			}
+
+			> [component="post/parent"] {
+				background: @ro-parentlink-bgcolor;
+				padding: 0 4px;
+				font-size:inherit;
 				
 				> i {
-					margin-right:0;
+					display:inline-block;
+					vertical-align:middle;
+					margin-right:4px;
+				}
+
+				> span {
+					display:inline-block;
+					vertical-align:middle;
+					font-size:80%;
+				}
+			}
+		}
+
+		.ro-vote {
+			display:flex;
+			flex-direction:row;
+			align-items:stretch;
+			margin:0 @ro-padding @ro-padding 0;
+
+			> .ro-upvote, > .ro-downvote {
+				color: @ro-vote-color;
+				font-size: 16px;
+				text-align: center;
+				border-radius: .25rem;
+				padding: 0px 10px;
+				height: 40px;
+				line-height: 40px;
+			}
+			
+			> .ro-upvote.upvoted, > .ro-downvote.downvoted {
+				color:@brand-primary;
+			}
+			
+			> .ro-upvote:hover {
+				color:green;
+				background:@ro-bar-bghover;
+
+			}
+			
+			> .ro-downvote:hover {
+				color:red;
+				background:@ro-bar-bghover;
+			}
+			
+			> .ro-votecount {
+				font-size: 13px;
+				font-weight: 500;
+				margin: 0 10px;
+				min-width:10px;
+				height: 40px;
+				line-height: 40px;
+			}
+
+			// SMALL
+			@media (max-width: @screen-xs-max) {
+				display:none;
+			}
+		}
+
+
+		> .ro-toggle-vote {
+			display: none;
+			margin:0 @ro-padding-sm 0 0;
+			flex:0 0 auto;
+			cursor:pointer;
+			padding: 0 10px;
+
+			> * {
+				height: 40px;
+				line-height: 40px;
+			}
+
+			> i {
+				margin-right:4px;
+				color:@ro-vote-color;
+				font-size: 16px;
+			}
+			
+			&.upvoted, &.downvoted {
+				> i { color: @brand-primary; }
+			}
+
+			> span {
+				font-size: 13px;
+				font-weight: 400;		
+				min-width:10px;
+			}
+
+			&:hover {
+				color:@brand-primary;
+				background:@ro-bar-bghover;
+				
+				> i {
+					color:@brand-primary;
 				}
 			}
 
-			button[component="post/quote"] {
-				padding:5px 15px;
+			@media (max-width: @screen-xs-max) {
+				display:flex;
 			}
 		}
 	}
-
-
 }
 
 
 
-@media (max-width: 380px) {
+[component="post"] > .ro-panel-post > .ro-box {
+	> .ro-drawer {
+		overflow:hidden;
+		border-radius:0 @ro-border-radius 0 0;
 
-	.topic .posts [component="post"] .postbox {
-		.ro-post-header {
-			margin-top: 55px;
+		@media (max-width: @screen-sm-max) { border-radius:0; }
+
+
+		> .ro-vote-sm {
+			display: none;
+			text-align: center;
+			background:linear-gradient(#DBDEE1,@ro-bar-color);
+
+			@media (max-width: @screen-xs-max) {
+				display:flex;
+			}	
 			
-			.ro-post-user-picture {
-				position: absolute;
-				top: 16px;
-				left: 16px;
+			> * {
+				flex-grow:1;
+				flex-basis:50%;
+				padding:10px 0;
+				margin:10px;
 			}
 			
-			.ro-post-heading {
-				margin-left: 0;
+			> .ro-upvote, > .ro-downvote {
+				cursor:pointer;
+				border-radius:@ro-border-radius;
+				
+				> i {
+					color:#333; //@ro-vote-color;
+					font-size:16px;
+					margin-bottom:5px;
+				}
+				
+				> span {
+					text-transform:uppercase;
+					font-weight:200;
+					color:#333;
+					font-size:13px;
+					display:block;
+				}
+
+				&:hover {
+					background:@ro-bar-bghover;
+				}
 			}
 			
-			.ro-post-votes {
-				position:absolute;
-				top: 16px;
-				right: 16px;
+			> .ro-upvote {
+				&.upvoted > i {
+					color:@brand-primary;
+				}
+
+				&:hover {
+					> i, > span {
+						color:green;
+					}
+				}
 			}
 
+			> .ro-downvote {
+				&.downvoted > i {
+					color:@brand-primary;
+				}
+
+				&:hover {
+					> i, > span {
+					color:red;
+					}
+				}
+			}
+		}		
+	}
+
+	> .ro-body {
+		padding:@ro-padding 0 0 @ro-padding;
+		flex:1 0 auto;
+
+		> [component="post/content"] {
+			margin:0 @ro-padding @ro-padding 0;
+			> *:first-child { margin-top:0; padding-top:0; }
+			> *:last-child { margin-bottom:0; padding-bottom:0; }
+		}
+	}
+
+	> .ro-foot {
+		display: flex;
+		flex-flow: row nowrap;
+		padding:@ro-padding 0 0 @ro-padding;
+
+		> * {
+			margin:0 @ro-padding @ro-padding 0;
 		}
 
+		> .ro-right {
+			flex:1 1 auto;
+			text-align:right;
+		}
+	}
+}
+
+
+
+[component="post"] > .ro-panel-post {
+	@media (max-width: @screen-sm-max) {
+		flex-flow: column nowrap;
+
+		> .ro-bar {
+			flex: 0 0 auto;
+
+			[component="user/picture"] {
+				flex: 0 0 40px;
+				.ro-user-icon {
+					width: 40px;
+					height: 40px;
+					line-height: 40px;
+					font-size: 20px;
+					> i {
+						width: 12px;
+						height: 12px;
+					}					
+				}
+			}
+			
+			> .ro-head {
+				flex-flow:row nowrap;
+				padding:0;
+				border-radius:@ro-border-radius @ro-border-radius 0 0;
+
+				> .ro-block {
+					flex-flow: row wrap;
+					flex: 1 1 auto;
+					margin: 0;
+					padding: @ro-padding-sm 0 5px @ro-padding-sm;
+					align-items:center;
+					
+					> * {
+						margin:0 @ro-padding-sm 5px 0;
+					}
+				}
+				
+				> .ro-vote { margin:0 @ro-padding-sm 0 0; }
+			}
+		}
+
+		
+		> .ro-box {
+			flex:1 1 auto;
+			margin-left:55px;
+			border-radius:0 0 @ro-border-radius @ro-border-radius;
+		}
+	}
+
+	@media (max-width: @screen-xs-max) {
+		> .ro-bar {
+			background:@ro-bar-color;
+
+			[component="user/picture"] {
+				flex: 0 0 24px;
+				margin:6px 0 6px 10px;
+				align-self:center;
+				
+				&:before { display:none; }
+
+				.ro-user-icon {
+					width: 24px;
+					height: 24px;
+					line-height: 24px;
+					font-size: 12px;
+					
+					> i {
+						border-color: @ro-bar-color;
+						width: 9px;
+						height: 9px;
+					}
+				}
+			}
+			
+			> .ro-head {
+				background:transparent;
+			}
+		}
+		
+		> .ro-box {
+			margin-left: 0;
+
+			> .ro-body{
+				position:relative;
+				&:before { .ro-arrow(top,8px,topleft,0,15px,@ro-bar-color); }
+			}
+		}
+	}
+}
+    
+
+
+[component="post"].highlight > .ro-panel-post > .ro-box {
+		background-color: #fffade;
+}
+
+
+[component="post"] [component="post/replies"] {
+	border-left: 4px solid @ro-replies-line-color;
+	padding: 30px 0 0 0;
+	position: relative;
+	top: -20px;
+	margin-left: 236px;
+	@media (max-width: @screen-sm-max) { margin-left:76px; }
+	@media (max-width: @screen-xs-max) { margin-left:21px; }
+
+	[component="post"] > .ro-panel-post {
+		flex-flow: column nowrap;
+
+		> .ro-bar {
+			flex: 0 0 auto;
+			background:@ro-bar-color;
+			border-radius:0 @ro-border-radius 0 0;
+
+			[component="user/picture"] {
+				flex: 0 0 24px;
+				margin:6px 0 6px 10px;
+				align-self:center;
+				
+				&:before { display:none; }
+
+				.ro-user-icon {
+					width: 24px;
+					height: 24px;
+					line-height: 24px;
+					font-size: 12px;
+					
+					> i {
+						border-color: @ro-bar-color;
+						width: 9px;
+						height: 9px;
+					}
+				}
+			}
+			
+			> .ro-head {
+				flex-flow:row nowrap;
+				padding:0;
+				background:transparent;
+
+
+				> .ro-block {
+					flex-flow: row wrap;
+					flex: 1 1 auto;
+					margin: 0;
+					padding: @ro-padding-sm 0 5px @ro-padding-sm;
+					align-items:center;
+					
+					> * {
+						margin:0 @ro-padding-sm 5px 0;
+					}
+				}
+				
+				> .ro-vote { margin:0 @ro-padding-sm 0 0; }
+			}
+		}
+
+		
+		> .ro-box {
+			flex:1 1 auto;
+			margin-left:0px;
+			border-radius:0 0 @ro-border-radius 0;
+		}
 	}
 }

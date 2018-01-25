@@ -31,7 +31,7 @@
 			<!-- IF user.picture -->
 			<img src="{user.picture}"/>
 			<!-- ELSE -->
-			<div class="user-icon" style="background-color: {user.icon:bgColor};">{user.icon:text}</div>
+			<div class="user-icon" style="background: {user.icon:bgColorImage};">{user.icon:text}</div>
 			<!-- ENDIF user.picture -->
 			<i component="user/status" class="fa fa-fw fa-circle status {user.status}"></i>
 			<!-- ENDIF user.uid -->

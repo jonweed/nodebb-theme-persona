@@ -70,7 +70,7 @@
 							<!-- IF user.picture -->
 							<img component="header/userpicture" src="{user.picture}" alt="{user.username}"/>
 							<!-- ELSE -->
-							<span component="header/usericon" class="user-icon" style="background-color: {user.icon:bgColor}; display: block;">{user.icon:text}</span>
+							<span component="header/usericon" class="user-icon" style="background: {user.icon:bgColorImage}; display: block;">{user.icon:text}</span>
 							<!-- ENDIF user.picture --> 
 							<span id="user-header-name" class="visible-xs-inline">{user.username}</span>
 						</label>

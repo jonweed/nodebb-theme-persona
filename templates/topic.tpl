@@ -32,20 +32,7 @@
 		<hr class="visible-xs" />
 
 		<ul component="topic" class="posts" data-tid="{tid}" data-cid="{cid}">
-			<!-- BEGIN posts -->
-				<li component="post" class="<!-- IF posts.deleted -->deleted<!-- ENDIF posts.deleted -->" <!-- IMPORT partials/data/topic.tpl -->
-				<!-- IF posts.toIndex -->data-toindex="{posts.toIndex}"<!-- ENDIF posts.toIndex -->>
-					<a component="post/anchor" data-index="{posts.index}" id="{posts.index}"></a>
-
-					<meta itemprop="datePublished" content="{posts.timestampISO}">
-					<meta itemprop="dateModified" content="{posts.editedISO}">
-
-					<!-- IMPORT partials/topic/post.tpl -->
-					<!-- IF !posts.index -->
-					<div class="post-bar-placeholder"></div>
-					<!-- ENDIF !posts.index -->
-				</li>
-			<!-- END posts -->
+			<!-- IMPORT partials/topic/post.tpl -->
 		</ul>
 
 		<!-- IF config.enableQuickReply -->

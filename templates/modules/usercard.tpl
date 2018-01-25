@@ -1,7 +1,7 @@
 <div class="ro-usercard">
 	<div class="ro-usercard-col1">
 		<a href="{config.relative_path}/user/{userslug}">
-			<div class="ro-usercard-picture" style="background-color: {icon:bgColor};">
+			<div class="ro-usercard-picture" style="background:{icon:bgColorImage};">
 				<!-- IF picture -->
 				<img src="{picture}" align="left" itemprop="image" />
 				<!-- ELSE -->

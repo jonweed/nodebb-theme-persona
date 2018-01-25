@@ -1,11 +1,33 @@
 @import "bootstrap/variables.less";
 @import "bootstrap/mixins.less";
 
+@ro-bar-color:				#EFF4F7; //#E9ECEF;
+@ro-box-color:				#fff;
+@ro-padding:				15px;
+@ro-padding-sm:				10px;
+@ro-padding-xs:				6px;
+@ro-border-radius:			0.25rem;
+@ro-spacing:				20px;
+@ro-vote-color:				#AEB1B3;
+@ro-permalink-color:		#747577;
+@ro-parentlink-bgcolor:		#F2F4F6;
+@ro-bar-bghover:			#EFF2F5;
+@ro-replies-line-color:		#CDD2D6;
+@ro-spinner-color:			#1976d2;
+@ro-head-horizontal-width:	150px;
+
 @import "reachout/navbar.less";
 @import "reachout/topic.less";
 @import "reachout/alerts.less";
 @import "reachout/usercards.less";
 @import "reachout/category.less";
+@import "reachout/categories.less";
+
+
+
+
+
+
 
 
 
@@ -57,16 +79,146 @@
 }
 
 
+.ro-flex (@direction,@grow,@shrink,@basis) {
+	display: flex;
+	flex-direction: @direction;
+	flex-grow: @grow;
+	flex-shrink:@shrink;
+	flex-basis:@basis;
+}
+
+
+// .ro-x
+
+.ro-x-margin (@from, @to, @size) {
+	margin: @from;
+	
+	@media (max-width: @size) {
+		margin: @to;
+	}
+}
+
+.ro-x-padding (@from, @to, @size) {
+	padding: @from;
+	
+	@media (max-width: @size) {
+		padding: @to;
+	}
+}
+
+.ro-x-flex-direction (@from, @to, @size) {
+	flex-direction: @from;
+	
+	@media (max-width: @size) {
+		flex-direction: @to;
+	}
+}
+
+.ro-x-display (@from, @to, @size) {
+	display: @from;
+	
+	@media (max-width: @size) {
+		display: @to;
+	}
+}
+
+.ro-x-flex (@from, @to, @size) {
+	flex: @from;
+	
+	@media (max-width: @size) {
+		flex: @to;
+	}
+}
+
+
+.ro-x-width (@from, @to, @size) {
+	width: @from;
+	
+	@media (max-width: @size) {
+		width: @to;
+	}
+}
+
+.ro-x-height (@from, @to, @size) {
+	height: @from;
+	
+	@media (max-width: @size) {
+		height: @to;
+	}
+}
+
+.ro-x-border-bottom (@from, @to, @size) {
+	border-bottom: @from;
+	
+	@media (max-width: @size) {
+		border-bottom: @to;
+	}
+}
+
+.ro-x-line-height (@from, @to, @size) {
+	line-height: @from;
+	
+	@media (max-width: @size) {
+		line-height: @to;
+	}
+}
+
+.ro-x-font-size (@from, @to, @size) {
+	font-size: @from;
+	
+	@media (max-width: @size) {
+		font-size: @to;
+	}
+}
+
+.ro-arrow(@border,@width,@position,@y,@x,@color: inherit) {
+	display: block;
+	content: ' ';
+	width: 0;
+	position: absolute;
+	border-style: solid;
+	border-width: @width;
+	border-color:transparent;
+	
+	& when (@border = top) { border-top-color:@color; }
+	& when (@border = right) { border-right-color:@color; }
+	& when (@border = bottom) { border-bottom-color:@color; }
+	& when (@border = left) { border-left-color:@color; }
+	
+	& when (@position = topleft) { top:@y; left:@x; }
+	& when (@position = topright) { top:@y; right:@x; }
+	& when (@position = bottomleft) { bottom:@y; left:@x; }
+	& when (@position = bottomright) { bottom:@y; right:@x; }
+}
 
 
 
+[component="post/downvote"].btn-votes, [component="post/upvote"].btn-votes {
+	border:none;
+	background-color:transparent;
+	padding:0 10px;
+	color:#c8c8c8;
 
 
-.button-mod(@color; @background; @border) {
-  color: @color;
-  #gradient > .vertical(lighten(@background, 5%), darken(@background, 5%), 0%, 100%);
-  background-color: @background;
-  border-color: @border;
+	&[component="post/upvote"].upvoted,
+	&[component="post/upvote"]:hover,
+	&[component="post/upvote"]:focus {
+		color:green;
+	}
+
+	&[component="post/downvote"].downvoted,
+	&[component="post/downvote"]:hover,
+	&[component="post/downvote"]:focus {
+		color:red;
+	}
+}
+
+
+
+.btn-reply, .btn-quote {
+	background: #fff;
+	border: 1px solid #1976d2;
+	color: #1976d2;
 
   &:hover,
   &:focus,
@@ -74,16 +226,12 @@
   &:active,
   &.active,
   .open > .dropdown-toggle& {
-    color: @color;
-    background-color: darken(@background, 5%);
-        border-color: darken(@border, 5%);
+    color: #fff;
+    background-color: #1976d2;
   }
   &:active,
   &.active,
   .open > .dropdown-toggle& {
-    background-image: none;
-    background-color: darken(@background, 2%);
-	border-color: darken(@border, 2%);
   }
   &.disabled,
   &[disabled],
@@ -94,22 +242,11 @@
     &.focus,
     &:active,
     &.active {
-      background-color: @background;
-          border-color: @border;
     }
   }
-
-  .badge {
-    color: @background;
-    background-color: @color;
+  
+  > i {
+	margin-right: 4px;
   }
 }
 
-
-@btn-reply-color:              #333;
-@btn-reply-bg:                 #fff;
-@btn-reply-border:             lighten(@btn-reply-bg, 5%);
-
-.btn-reply {
-  .button-mod(@btn-reply-color; @btn-reply-bg; @btn-reply-border);
-}
