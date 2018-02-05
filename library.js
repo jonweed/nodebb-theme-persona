@@ -3,7 +3,18 @@
 var striptags = require('striptags');
 var meta = module.parent.require('./meta');
 var user = module.parent.require('./user');
+var categories = module.parent.require('./categories');
 var colorConvert = require('color-convert');
+
+
+var winston = module.parent.require('winston'),
+	User = module.parent.require('./user'),
+	Posts = module.parent.require('./posts'),
+	Topics = module.parent.require('./topics'),
+	Categories = module.parent.require('./categories'),
+	Meta = module.parent.require('./meta'),
+	db = module.parent.require('./database'),
+async = module.parent.require('async');
 
 var library = {};
 
@@ -42,6 +53,17 @@ library.addPostData = function(data, callback) {
 	callback(null, data);
 };
 
+library.addRepliesToTopic = function(data, callback) {
+	
+//	console.log(data.templateData.topics);
+//console.log(data.templateData.topics[1].teaser);
+//console.log(data.templateData.cid, data.req.uid, 3);
+//posts.getPostField(pid, 'tid', next);
+
+callback(null,data);
+};
+
+
 library.addAdminNavigation = function(header, callback) {
 	header.plugins.push({
 		route: '/plugins/persona',
@@ -56,8 +78,8 @@ library.getTeasers = function(data, callback) {
 	data.teasers.forEach(function(teaser) {
 		if (teaser && teaser.content) {
 			teaser.content = striptags(teaser.content, ['img']);
-			if (teaser.content.length > 300) {
-				teaser.content = teaser.content.substr(0, 300);
+			if (teaser.content.length > 150) {
+				teaser.content = teaser.content.substr(0, 150);
 				teaser.content = teaser.content.substr(0, Math.min(teaser.content.length, teaser.content.lastIndexOf(" ")))+'...';
 			}
 		}

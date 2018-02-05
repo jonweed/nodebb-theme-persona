@@ -35,97 +35,113 @@
 			<!-- ENDIF showSelect -->
 
 			<div class="ro-head">
-				<div class="ro-title">
-					<i component="topic/pinned" class="fa fa-thumb-tack <!-- IF !topics.pinned -->hide<!-- ENDIF !topics.pinned -->" title="[[topic:pinned]]"></i>
-					<i component="topic/locked" class="fa fa-lock <!-- IF !topics.locked -->hide<!-- ENDIF !topics.locked -->" title="[[topic:locked]]"></i>
-					<i component="topic/moved" class="fa fa-arrow-circle-right <!-- IF !topics.oldCid -->hide<!-- ENDIF !topics.oldCid -->" title="[[topic:moved]]"></i>
-					<!-- BEGIN icons -->@value<!-- END icons -->
 
-					<!-- IF !topics.noAnchor -->
-					<a href="{config.relative_path}/topic/{topics.slug}<!-- IF topics.bookmark -->/{topics.bookmark}<!-- ENDIF topics.bookmark -->" itemprop="url">{topics.title}</a><br />
-					<!-- ELSE -->
-					<span>{topics.title}</span><br />
-					<!-- ENDIF !topics.noAnchor -->
 
-					<div>
-						<!-- IF !template.category -->
-						<small>
-							<a href="{config.relative_path}/category/{topics.category.slug}"><span class="fa-stack fa-lg"><i style="color:{topics.category.bgColor};"class="fa fa-circle fa-stack-2x"></i><i style="color:{topics.category.color};" class="fa {topics.category.icon} fa-stack-1x"></i></span> {topics.category.name}</a> &bull;
-						</small>
-						<!-- ENDIF !template.category -->
+
+				<div class="ro-splitblock">
 						
+					<div class="ro-title">
+						<div>
+							<i component="topic/pinned" class="fa fa-thumb-tack <!-- IF !topics.pinned -->hide<!-- ENDIF !topics.pinned -->" title="[[topic:pinned]]"></i>
+							<i component="topic/locked" class="fa fa-lock <!-- IF !topics.locked -->hide<!-- ENDIF !topics.locked -->" title="[[topic:locked]]"></i>
+							<i component="topic/moved" class="fa fa-arrow-circle-right <!-- IF !topics.oldCid -->hide<!-- ENDIF !topics.oldCid -->" title="[[topic:moved]]"></i>
+							<!-- BEGIN icons -->@value<!-- END icons -->
+
+							<!-- IF !topics.noAnchor -->
+							<a href="{config.relative_path}/topic/{topics.slug}<!-- IF topics.bookmark -->/{topics.bookmark}<!-- ENDIF topics.bookmark -->" itemprop="url">{topics.title}</a>
+							<!-- ELSE -->
+							<span>{topics.title}</span>
+							<!-- ENDIF !topics.noAnchor -->
+						</div>
+
+						<!-- IF !template.category -->
+						<small class="ro-category-link">
+							<a href="{config.relative_path}/category/{topics.category.slug}"><i style="color:{topics.category.bgColor};" class="fa {topics.category.icon}"></i> {topics.category.name}</a> &bull;
+						</small>
+						<!-- ENDIF !template.category -->					
+
+						<small class="ro-posted-by">
+							Posted by <a href="<!-- IF topics.user.userslug -->{config.relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">{topics.user.username}</a> &bull; <span class="timeago" title="{topics.timestampISO}"></span>
+						</small>
+
 						<!-- IF topics.tags.length -->
-						<span class="tag-list hidden-xs">
+						&bull; <span class="tag-list hidden-xs">
 							<!-- BEGIN tags -->
 							<a href="{config.relative_path}/tags/{topics.tags.value}"><span class="tag" style="<!-- IF topics.tags.color -->color: {topics.tags.color};<!-- ENDIF topics.tags.color --><!-- IF topics.tags.bgColor -->background-color: {topics.tags.bgColor};<!-- ENDIF topics.tags.bgColor -->">{topics.tags.value}</span></a>
 							<!-- END tags -->
-							<small>&bull;</small>
 						</span>
 						<!-- ENDIF topics.tags.length -->
 
-						<small><span class="timeago" title="{topics.timestampISO}"></span> &bull; <a href="<!-- IF topics.user.userslug -->{config.relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">{topics.user.username}</a></small>
-						<small class="visible-xs-inline">
-							<!-- IF topics.teaser.timestamp -->
-							<span class="timeago" title="{topics.teaser.timestampISO}"></span>
-							<!-- ELSE -->
-							<span class="timeago" title="{topics.timestampISO}"></span>
-							<!-- ENDIF topics.teaser.timestamp -->
-						</small>
-					</div>
-					
-				</div>
+						<!-- IF supportForum -->
+						<div class="ro-private">
+							<i class="fa fa-user-secret"></i>
+							<span>Private</span>
+						</div>
+						<!-- ENDIF supportForum -->
 
-				<div class="ro-stats">
+					</div><!-- .ro-title -->
 
-					<div class="stats posts">
-						<span class="human-readable-number" title="{topics.postcount}">{topics.postcount}</span><small>[[global:posts]]</small>						
-					</div>
-					<div class="stats views">
-						<span class="human-readable-number" title="{topics.viewcount}">{topics.viewcount}</span><small>[[global:views]]</small>
-					</div>
-					<div class="stats votes">
-						<span class="human-readable-number" title="{topics.votes}">{topics.votes}</span><small>[[global:votes]]</small>
-					</div>
-					
-				</div><!-- .ro-stats --->
-	
+					<div class="ro-stats">
+						<div class="stats posts">
+							<span class="human-readable-number" title="{topics.postcount}">{topics.postcount}</span><small>[[global:posts]]</small>						
+						</div>
+						<div style="display:none">
+							<div class="stats views">
+								<span class="human-readable-number" title="{topics.viewcount}">{topics.viewcount}</span><small>[[global:views]]</small>
+							</div>
+							<div class="stats votes">
+								<span class="human-readable-number" title="{topics.votes}">{topics.votes}</span><small>[[global:votes]]</small>
+							</div>
+						</div>
+					</div><!-- .ro-stats --->	
+
+				</div><!-- .ro-splitblock -->
+
+
+
 			</div><!-- .ro-head -->
-			
+
 		</div><!-- .ro-bar -->
 
-
 		<div class="ro-box" style="border-color:{topics.category.bgColor}">
+
 			<!-- IF topics.unreplied -->
 			<div class="ro-teaser no-reply">
 				<div class="post-content">
 					[[category:no_new_posts]]
 				</div>
-			</div>
+			</div><!-- .ro-teaser.no-reply -->
 			<!-- ELSE -->
 			<!-- IF topics.teaser.pid -->			
-			<div class="ro-teaser" component="topic/teaser">
-				<div class="post-content">
-					{topics.teaser.content}
-				</div>
-			</div>
-			<div class="ro-toggle-btn">
-				<a class="ro-icon" href="{config.relative_path}/user/{topics.teaser.user.userslug}">
+			<a class="ro-icon" href="{config.relative_path}/user/{topics.teaser.user.userslug}">
+			
+				<!-- IF topics.teaser.user.picture -->
+				<img class="ro-user-icon" title="{topics.teaser.user.username}" alt="{topics.teaser.user.username}" src="{topics.teaser.user.picture}">
+				<!-- ELSE -->
+				<span class="ro-user-icon" title="{topics.teaser.user.username}" style="background: {topics.teaser.user.icon:bgColorImage};">{topics.teaser.user.icon:text}</span>
+				<!-- ENDIF topics.teaser.user.picture -->
+			</a>				
+
+			<div class="ro-block">
 				
-					<!-- IF topics.teaser.user.picture -->
-					<img class="ro-user-icon" title="{topics.teaser.user.username}" alt="{topics.teaser.user.username}" src="{topics.teaser.user.picture}">
-					<!-- ELSE -->
-					<span class="ro-user-icon" title="{topics.teaser.user.username}" style="background: {topics.teaser.user.icon:bgColorImage};">{topics.teaser.user.icon:text}</span>
-					<!-- ENDIF topics.teaser.user.picture -->
-				</a>
-				<div class="ro-push">
-					<a class="ro-permalink" href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}">
-						<span class="timeago" title="{topics.teaser.timestampISO}"></span>
-					</a>
-				</div>
-				<div class="toggle"><span>Show</span><span>Hide</span></div>
-			</div>
+				<div class="ro-toggle-btn">
+					<div class="ro-permalink">
+						{topics.teaser.user.username} replied <a href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}"><span class="timeago" title="{topics.teaser.timestampISO}"></span></a>
+					</div>
+					<div class="toggle"></div>
+				</div><!-- .ro-toggle-btn -->
+
+				<div class="ro-teaser" component="topic/teaser">
+					<div class="post-content">
+						{topics.teaser.content}
+					</div>
+				</div><!-- .ro-teaser -->
+				
+
+			</div><!-- .ro-block -->
+
 			<!-- ENDIF topics.teaser.pid -->
-			<!-- ENDIF topics.unreplied -->		
+			<!-- ENDIF topics.unreplied -->	
 
 		</div><!-- .ro-box -->
 

@@ -10,6 +10,7 @@
 	<div class="ro-panel-post">
 		<div class="ro-bar">
 			<div component="user/picture" data-uid="{posts.user.uid}" href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
+				<i class="fa fa-check ro-selected"></i>
 				<a data-uid="{posts.user.uid}" class="ro-user-icon" <!-- IF !posts.user.picture -->style="background-image: {posts.user.icon:bgColorImage};"<!-- ENDIF !posts.user.picture -->>
 					<!-- IF posts.user.picture -->
 					<img data-uid="{posts.user.uid}" class="ro-post-user-icon" src="{posts.user.picture}" align="left" itemprop="image" />
@@ -56,6 +57,13 @@
 							<!-- ENDIF posts.user.custom_profile_info.length -->
 						</span>
 					</div>
+
+					<!-- IF supportForum -->
+					<div class="ro-private">
+						<i class="fa fa-user-secret"></i>
+						<span>Private</span>
+					</div>
+					<!-- ENDIF supportForum -->
 
 				</div><!-- .ro-block -->
 

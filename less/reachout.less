@@ -23,9 +23,29 @@
 @import "reachout/category.less";
 @import "reachout/categories.less";
 
+.stats {
+	display:flex;
+	flex-flow:column nowrap;
+	flex:0 0 auto;
+	text-align:center;
+	
+	> span {
+	}
+	
+	> small {
+		text-transform: uppercase;
+		color: #777;
+	}
+}
 
-
-
+.ro-private {
+	color:red;
+	font-weight:300;
+	
+	> * { display:inline-block; }
+	> span { font-size: 11px; text-transform:uppercase; }
+	> i { font-size:14px; margin-right:4px; }
+}
 
 
 

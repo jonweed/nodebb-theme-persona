@@ -1,3 +1,37 @@
+.topic-main-buttons {
+	display:flex;
+	flex-flow:row-wrap;
+	
+	> .stats {
+		margin-right:15px;
+	}
+}
+
+.topic .pagination-block {
+	position: fixed;
+	width: 100%;
+	background-color: #eee;
+	bottom: 0;
+	left: 0;
+	z-index: 100;
+	transition: opacity 250ms ease-in;
+	opacity: 0;
+}
+
+.topic .pagination-block .progress-bar {
+	background-color: #5bc0de;
+	display: block;
+	z-index: -1;
+	position: absolute;
+}
+
+.topic .pagination-block .wrapper {
+	padding: 5px 0 5px 0;
+}
+
+.topic .pagination-block.ready { opacity:1; }
+
+
 //
 // PANEL POST
 //
@@ -96,6 +130,37 @@
 			&:before { display:none; }
 		}
 
+		> .ro-selected {
+			display: none;
+			cursor: pointer;
+			position: absolute;
+			top:0;
+			left:0;
+			text-align: center;
+			border-radius: 50%;
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+			font-size: 25px;
+			border: 1px solid #5cb85c;
+			background: #fff;
+			color: #5cb85c;
+
+			@media (max-width: @screen-sm-max) {
+				width: 40px;
+				height: 40px;
+				line-height: 40px;
+				font-size: 20px;
+			}
+
+			@media (max-width: @screen-xs-max) {
+				width: 24px;
+				height: 24px;
+				line-height: 24px;
+				font-size: 12px;
+			}
+		}
+
 		> .ro-user-icon {
 			display: block;
 			cursor: pointer;
@@ -119,6 +184,10 @@
 				background: linear-gradient(0deg,#4caf50,#47a34b);
 				border: 2px solid @body-bg;
 				color: transparent;
+			
+				&.offline { display:none; }
+				&.away { background:linear-gradient(0deg,#ff6d00,#F26800); }
+				&.dnd { background:linear-gradient(0deg,#f44336,#EB4034); }
 			}
 
 			@media (max-width: @screen-sm-max) {
@@ -443,10 +512,34 @@
 }
 
 
+[component="post"].deleted {
+	opacity:0.3;
+}
 
 [component="post"].highlight > .ro-panel-post > .ro-box {
-		background-color: #fffade;
+	background-color: #fffade;
 }
+
+[component="post"].bg-success > .ro-panel-post {
+	> .ro-box, > .ro-head {
+		background-color:#e6fce3;
+	}
+
+	> .ro-bar > [component="user/picture"] {
+		opacity:1; // overrides persona
+
+		> .ro-user-icon {
+			opacity:0;
+			cursor:default; //ugh
+		}
+		
+		> .ro-selected {
+			display: block;
+		}
+	}
+	
+}
+
 
 
 [component="post"] [component="post/replies"] {
