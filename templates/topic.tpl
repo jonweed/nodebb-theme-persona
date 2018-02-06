@@ -29,8 +29,6 @@
 			</span>
 		</div>
 
-		<hr class="visible-xs" />
-
 		<ul component="topic" class="posts" data-tid="{tid}" data-cid="{cid}">
 			<!-- IMPORT partials/topic/post.tpl -->
 		</ul>
