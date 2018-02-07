@@ -16,6 +16,8 @@
 @ro-spinner-color:			#1976d2;
 @ro-head-horizontal-width:	150px;
 
+@ro-panel-bg:				#E9EEF2;
+
 @import "reachout/navbar.less";
 @import "reachout/topic.less";
 @import "reachout/alerts.less";
@@ -24,6 +26,12 @@
 @import "reachout/categories.less";
 @import "reachout/breadcrumbs.less";
 
+.posts-list .posts-list-item .post-body {
+	background: white;
+	border-bottom: 1px solid #DADFE3;
+	border-radius: 0.25rem 0 0 0.25rem;
+	padding:10px;
+}
 .stats {
 	display:flex;
 	flex-flow:column nowrap;

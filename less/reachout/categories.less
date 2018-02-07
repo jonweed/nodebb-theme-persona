@@ -21,16 +21,16 @@ ul.categories > li, ul.topic-list > li, ul.posts > li { list-style:none; }
 	display: flex;
 	flex-flow:column nowrap;
 	align-items: stretch;
-	margin-bottom: @ro-spacing;
-	padding: 0;
+	padding:15px;
+	border-bottom:1px solid @body-bg;
+	background:@ro-panel-bg;
 
 	> .ro-bar {
 		display: flex;
-		flex:1 1 auto;
+		flex:0 1 auto;
 		flex-flow: row nowrap;
 		border-radius: @ro-border-radius @ro-border-radius 0 0;
-		padding: @ro-padding 0 7px @ro-padding;
-		background: #fff;
+//		padding: @ro-padding 0 7px @ro-padding;
 		align-items:stretch;
 	}
 
@@ -40,7 +40,7 @@ ul.categories > li, ul.topic-list > li, ul.posts > li { list-style:none; }
 		flex-flow: column nowrap;
 		align-items: stretch;
 		position:relative;
-		background:@ro-bar-color;
+//		background:@ro-bar-color;
 		border-radius: 0 0 @ro-border-radius @ro-border-radius;
 		margin-left:0;
 //		border-top:2px solid;
@@ -95,6 +95,8 @@ ul.categories > li, ul.topic-list > li, ul.posts > li { list-style:none; }
 			> * { 
 				margin:0 @ro-padding @ro-padding 0;
 			}
+			
+			> *:last-child { display:none; }
 		}
 
 		@media (max-width: 360px) {
@@ -114,29 +116,51 @@ ul.categories > li, ul.topic-list > li, ul.posts > li { list-style:none; }
 
 
 [component="categories/category"].ro-panel-category-item > .ro-box {
+	> .ro-card  {
+		display:flex;
+		flex-flow:row nowrap;
+		align-items:flex-start;
+
+		> .ro-icon {
+			margin: 10px 24px 0 9px;
+			position:relative;
+			
+			&:before {
+						.ro-arrow(right,10px,topright,50%,-24px,#fff);
+						margin-top:-10px;
+			}			
+
+			> .ro-user-icon {
+				display:inline-block;
+				color: #fff;
+				border-radius:50%;
+				height: 22px;
+				width:22px;
+				line-height:22px;
+				text-align:center;
+				font-size:11px;
+			}
+		}
+
+
+	}
+
 	> .ro-card > [component="category/posts"] {
+		display:flex;
+		flex-flow:column nowrap;
+		flex:1 1 auto;
+		background: #fff;
+		border-radius:@ro-border-radius;
+
 		> .ro-toggle-btn {
 			display: flex;
 			flex-flow: row nowrap;
 			align-items: center;
 
-			> .ro-icon {
-				margin:@ro-padding-sm @ro-padding-sm @ro-padding-sm @ro-padding;
 
-				> .ro-user-icon {
-					display:inline-block;
-					color: #fff;
-					border-radius:50%;
-					height: 20px;
-					width:20px;
-					line-height:20px;
-					text-align:center;
-					font-size:10px;
-				}
-			}
 			
 			> .ro-push {
-				margin:@ro-padding-sm  0;
+				margin:@ro-padding-sm  0 @ro-padding-sm @ro-padding;
 				line-height:24px;
 				flex:0 1 auto;
 				font-weight:300;
@@ -184,22 +208,28 @@ ul.categories > li, ul.topic-list > li, ul.posts > li { list-style:none; }
 			height: 0;
 			overflow:hidden;
 			> *:first-of-type {
-				padding: 0 @ro-padding @ro-padding 45px;
+				padding: 0 @ro-padding @ro-padding @ro-padding;
 				margin:0;
-				font-weight:300;
+				font-weight:400;
 				font-size:90%;
 				
 				> * { margin:0; }
 			}
-			
-			&.no-reply {
+		}
+		
+		&.no-reply {
+			background:transparent;
+			margin-left:40px;
+
+			> .post-content {
 				height:auto;
-				
+			
 				> div {
 					padding: @ro-padding-sm @ro-padding;
 				}
 			}
 		}
+
 
 
 		> .ro-teaser {
@@ -241,14 +271,61 @@ ul.categories > li, ul.topic-list > li, ul.posts > li { list-style:none; }
 
 
 
-@media (min-width: @screen-md-max) {
+@media (max-width: @screen-md-max) {
+	.categories {
+		> li:nth-of-type(1) {
+			border-top-left-radius:@ro-border-radius;
+			border-top-right-radius:@ro-border-radius;
+		}
+
+		> li:last-child	{
+			border-bottom-left-radius:@ro-border-radius;
+			border-bottom-right-radius:@ro-border-radius;
+		}
+	}
+}
+
+@media (min-width: @screen-lg) {
 	.categories {	
 		display:flex;
 		flex-flow:row wrap;
+		border-left:1px solid @body-bg;
+		border-top:1px solid @body-bg;
 		
 		> [component="categories/category"].ro-panel-category-item {
+			border-right:1px solid @body-bg;
 			flex:1 1 40%;
-			margin:10px;
+			
+			&:last-child { max-width: 50%; }
+		}
+	}
+
+	.categories {
+		> li:nth-of-type(1) {
+			border-top-left-radius:@ro-border-radius;
+			
+			&:nth-last-child(1) { border-top-right-radius:@ro-border-radius; }
+		}
+
+		> li:nth-of-type(2) {
+			border-top-right-radius:@ro-border-radius;
+		}
+
+		
+		> li:nth-last-child(1) {
+			&:nth-of-type(odd) {
+				border-bottom-left-radius:@ro-border-radius;
+				border-bottom-right-radius:@ro-border-radius;
+			}
+			&:nth-of-type(even) {
+				border-bottom-left-radius:0;
+				border-bottom-right-radius:@ro-border-radius;
+			}
+		}
+
+		> li:nth-last-child(2) {
+			&:nth-of-type(odd) { border-bottom-left-radius: @ro-border-radius; }
+			&:nth-of-type(even) { border-bottom-right-radius:@ro-border-radius; }
 		}
 	}
 }

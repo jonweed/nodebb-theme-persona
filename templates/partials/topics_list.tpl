@@ -55,7 +55,7 @@
 						</div>
 
 						<!-- IF !template.category -->
-						<small class="ro-category-link">
+						<small class="ro-category-link" style="color:{topics.category.bgColor};">
 							<a href="{config.relative_path}/category/{topics.category.slug}"><i style="color:{topics.category.bgColor};" class="fa {topics.category.icon}"></i> {topics.category.name}</a> &bull;
 						</small>
 						<!-- ENDIF !template.category -->					
