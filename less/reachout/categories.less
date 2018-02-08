@@ -71,12 +71,12 @@ ul.categories > li, ul.topic-list > li, ul.posts > li { list-style:none; }
 		> .ro-title {
 			margin: 0 @ro-padding @ro-padding 0;
 			flex: 1 1 auto;
-			
+
 			> h2 {
 				margin: 0;
 				font-size:20px;
 			}
-			
+
 			> .ro-description {
 				color:#777;
 				font-size:12px;
@@ -86,16 +86,16 @@ ul.categories > li, ul.topic-list > li, ul.posts > li { list-style:none; }
 				}
 			}
 		}
-		
+
 		> .ro-stats {
 			display:flex;
 			flex:0 0 auto;
 			flex-flow:row nowrap;
-			
-			> * { 
+
+			> * {
 				margin:0 @ro-padding @ro-padding 0;
 			}
-			
+
 			> *:last-child { display:none; }
 		}
 
@@ -104,7 +104,7 @@ ul.categories > li, ul.topic-list > li, ul.posts > li { list-style:none; }
 
 			> .ro-stats > .stats {
 				flex-flow:row nowrap;
-			
+
 				> span {
 					margin-right:4px;
 				}
@@ -124,11 +124,11 @@ ul.categories > li, ul.topic-list > li, ul.posts > li { list-style:none; }
 		> .ro-icon {
 			margin: 10px 24px 0 9px;
 			position:relative;
-			
+
 			&:before {
-						.ro-arrow(right,10px,topright,50%,-24px,#fff);
+						.ro-arrow(right,10px,topright,50%,-24px,@ro-bubble-bg);
 						margin-top:-10px;
-			}			
+			}
 
 			> .ro-user-icon {
 				display:inline-block;
@@ -149,7 +149,7 @@ ul.categories > li, ul.topic-list > li, ul.posts > li { list-style:none; }
 		display:flex;
 		flex-flow:column nowrap;
 		flex:1 1 auto;
-		background: #fff;
+		background: @ro-bubble-bg;
 		border-radius:@ro-border-radius;
 
 		> .ro-toggle-btn {
@@ -158,14 +158,14 @@ ul.categories > li, ul.topic-list > li, ul.posts > li { list-style:none; }
 			align-items: center;
 
 
-			
+
 			> .ro-push {
 				margin:@ro-padding-sm  0 @ro-padding-sm @ro-padding;
 				line-height:24px;
 				flex:0 1 auto;
 				font-weight:300;
 			}
-			
+
 			> .toggle {
 				text-align:right;
 				line-height:24px;
@@ -187,7 +187,7 @@ ul.categories > li, ul.topic-list > li, ul.posts > li { list-style:none; }
 					font: normal normal normal 14px/1 FontAwesome;
 					content: "\f107";
 					font-size: 16px;
-					color: #1976d2;			
+					color: #1976d2;
 					cursor:pointer;
 				}
 
@@ -195,12 +195,12 @@ ul.categories > li, ul.topic-list > li, ul.posts > li { list-style:none; }
 					&:after {
 						content: "\f106";
 					}
-					
+
 					> span {
 						display:none;
 						&:last-child { display: inline-block; }
 					}
-				}					
+				}
 			}
 		}
 
@@ -212,18 +212,18 @@ ul.categories > li, ul.topic-list > li, ul.posts > li { list-style:none; }
 				margin:0;
 				font-weight:400;
 				font-size:90%;
-				
+
 				> * { margin:0; }
 			}
 		}
-		
+
 		&.no-reply {
 			background:transparent;
 			margin-left:40px;
 
 			> .post-content {
 				height:auto;
-			
+
 				> div {
 					padding: @ro-padding-sm @ro-padding;
 				}
@@ -237,12 +237,12 @@ ul.categories > li, ul.topic-list > li, ul.posts > li { list-style:none; }
 			overflow:hidden;
 			padding:0;
 			line-height:normal;
-			
+
 			> * {
 				margin: 0;
 				padding: 0;
 			}
-			
+
 
 
 			&.no-reply {
@@ -260,7 +260,7 @@ ul.categories > li, ul.topic-list > li, ul.posts > li { list-style:none; }
 			> .post-content {
 				height:auto !important;
 			}
-			
+
 			> .ro-toggle-btn > .toggle {
 				display:none;
 			}
@@ -286,16 +286,16 @@ ul.categories > li, ul.topic-list > li, ul.posts > li { list-style:none; }
 }
 
 @media (min-width: @screen-lg) {
-	.categories {	
+	.categories {
 		display:flex;
 		flex-flow:row wrap;
 		border-left:1px solid @body-bg;
 		border-top:1px solid @body-bg;
-		
+
 		> [component="categories/category"].ro-panel-category-item {
 			border-right:1px solid @body-bg;
 			flex:1 1 40%;
-			
+
 			&:last-child { max-width: 50%; }
 		}
 	}
@@ -303,7 +303,7 @@ ul.categories > li, ul.topic-list > li, ul.posts > li { list-style:none; }
 	.categories {
 		> li:nth-of-type(1) {
 			border-top-left-radius:@ro-border-radius;
-			
+
 			&:nth-last-child(1) { border-top-right-radius:@ro-border-radius; }
 		}
 
@@ -311,7 +311,7 @@ ul.categories > li, ul.topic-list > li, ul.posts > li { list-style:none; }
 			border-top-right-radius:@ro-border-radius;
 		}
 
-		
+
 		> li:nth-last-child(1) {
 			&:nth-of-type(odd) {
 				border-bottom-left-radius:@ro-border-radius;

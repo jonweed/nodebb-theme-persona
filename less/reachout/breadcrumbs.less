@@ -1,4 +1,4 @@
-@ro-breadcrumb-bgcolor:			#c1c5c9;
+@ro-breadcrumb-bgcolor:			#e9eef2;
 @ro-breadcrumb-hovercolor:		#f5f8ff;
 @ro-breadcrumb-fontcolor:		#333;
 @ro-breadcrumb-fonthovercolor:	#145ca4;
@@ -32,13 +32,13 @@
 			padding: 0 10px;
 			border-radius:0.25rem;
 			margin-right:4px;
-			
+
 			&:hover {
 				background:@ro-breadcrumb-hovercolor;
 				color:@ro-breadcrumb-fonthovercolor;
 			}
 		}
-		
+
 		> a:last-of-type {
 			&:hover {
 				background:@ro-breadcrumb-hovercolor;
@@ -58,7 +58,7 @@
 	overflow:hidden;
 	border-radius:@ro-border-radius;
 
-	
+
 	> a {
 		align-self: center;
 		display: inline-block;
@@ -67,7 +67,7 @@
 		background: @ro-breadcrumb-bgcolor;
 		color:@ro-breadcrumb-fontcolor;
 		border-radius: 0 @ro-border-radius @ro-border-radius 0;
-		
+
 		> i { color:inherit; }
 
 		&:hover {
@@ -76,14 +76,14 @@
 		}
 
 		@media (max-width: @screen-xs-max) { display:none; }
-		
+
 	}
 
 	li {
 		@media (max-width: @screen-xs-max) {
 			display: none;
 			&.active { display:block }
-		}			
+		}
 
 		> a {
 			display: block;
@@ -106,12 +106,12 @@
 				width: 0;
 				height: 0;
 			}
-		
+
 			&:before {
 				left: -20px;
 				border-left-color: transparent;
 			}
-		
+
 			&:after {
 				left: 100%;
 				border-color: transparent;
@@ -121,7 +121,7 @@
 			&:hover {
 				background-color: @ro-breadcrumb-hovercolor;
 				color:@ro-breadcrumb-fonthovercolor;
-				
+
 				&:before {
 					border-color: @ro-breadcrumb-hovercolor;
 					border-left-color: transparent;
@@ -149,7 +149,7 @@
 			background: @ro-breadcrumb-active-bgcolor;
 			color: @ro-breadcrumb-active-fgcolor;
 			margin-right:0;
-			
+
 			&:before {
 				border-color: @ro-breadcrumb-active-bgcolor;
 				border-left-color: transparent;
@@ -158,12 +158,12 @@
 			&:after {
 				border: none;
 			}
-			
+
 			@media (max-width: @screen-xs-max) {
 				border-radius: 0 @ro-border-radius @ro-border-radius 0;
 			}
 		}
-		
+
 		&.norss > a {
 			border-radius: 0 @ro-border-radius @ro-border-radius 0;
 		}

@@ -16,7 +16,8 @@
 @ro-spinner-color:			#1976d2;
 @ro-head-horizontal-width:	150px;
 
-@ro-panel-bg:				#E9EEF2;
+@ro-panel-bg:				#e9edf2;  // #E9EEF2;
+@ro-bubble-bg:			#fff;
 
 @import "reachout/navbar.less";
 @import "reachout/topic.less";
@@ -37,10 +38,10 @@
 	flex-flow:column nowrap;
 	flex:0 0 auto;
 	text-align:center;
-	
+
 	> span {
 	}
-	
+
 	> small {
 		text-transform: uppercase;
 		color: #777;
@@ -50,7 +51,7 @@
 .ro-private {
 	color:red;
 	font-weight:300;
-	
+
 	> * { display:inline-block; }
 	> span { font-size: 11px; text-transform:uppercase; }
 	> i { font-size:14px; margin-right:4px; }
@@ -65,7 +66,7 @@
 		outline: 0;
 		position: absolute;
 	}
-	
+
 	&:active:focus {
 		outline: 0;
 	}
@@ -121,7 +122,7 @@
 
 .ro-x-margin (@from, @to, @size) {
 	margin: @from;
-	
+
 	@media (max-width: @size) {
 		margin: @to;
 	}
@@ -129,7 +130,7 @@
 
 .ro-x-padding (@from, @to, @size) {
 	padding: @from;
-	
+
 	@media (max-width: @size) {
 		padding: @to;
 	}
@@ -137,7 +138,7 @@
 
 .ro-x-flex-direction (@from, @to, @size) {
 	flex-direction: @from;
-	
+
 	@media (max-width: @size) {
 		flex-direction: @to;
 	}
@@ -145,7 +146,7 @@
 
 .ro-x-display (@from, @to, @size) {
 	display: @from;
-	
+
 	@media (max-width: @size) {
 		display: @to;
 	}
@@ -153,7 +154,7 @@
 
 .ro-x-flex (@from, @to, @size) {
 	flex: @from;
-	
+
 	@media (max-width: @size) {
 		flex: @to;
 	}
@@ -162,7 +163,7 @@
 
 .ro-x-width (@from, @to, @size) {
 	width: @from;
-	
+
 	@media (max-width: @size) {
 		width: @to;
 	}
@@ -170,7 +171,7 @@
 
 .ro-x-height (@from, @to, @size) {
 	height: @from;
-	
+
 	@media (max-width: @size) {
 		height: @to;
 	}
@@ -178,7 +179,7 @@
 
 .ro-x-border-bottom (@from, @to, @size) {
 	border-bottom: @from;
-	
+
 	@media (max-width: @size) {
 		border-bottom: @to;
 	}
@@ -186,7 +187,7 @@
 
 .ro-x-line-height (@from, @to, @size) {
 	line-height: @from;
-	
+
 	@media (max-width: @size) {
 		line-height: @to;
 	}
@@ -194,7 +195,7 @@
 
 .ro-x-font-size (@from, @to, @size) {
 	font-size: @from;
-	
+
 	@media (max-width: @size) {
 		font-size: @to;
 	}
@@ -208,12 +209,12 @@
 	border-style: solid;
 	border-width: @width;
 	border-color:transparent;
-	
+
 	& when (@border = top) { border-top-color:@color; }
 	& when (@border = right) { border-right-color:@color; }
 	& when (@border = bottom) { border-bottom-color:@color; }
 	& when (@border = left) { border-left-color:@color; }
-	
+
 	& when (@position = topleft) { top:@y; left:@x; }
 	& when (@position = topright) { top:@y; right:@x; }
 	& when (@position = bottomleft) { bottom:@y; left:@x; }
@@ -273,7 +274,7 @@
     &.active {
     }
   }
-  
+
   > i {
 	margin-right: 4px;
   }

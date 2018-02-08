@@ -30,7 +30,12 @@
 		</div>
 
 		<ul component="topic" class="posts" data-tid="{tid}" data-cid="{cid}">
+			<!-- BEGIN posts -->
+			<!-- IF !posts.index -->
+			<div class="post-bar-placeholder"></div>
+			<!-- ENDIF !posts.index -->
 			<!-- IMPORT partials/topic/post.tpl -->
+			<!-- END posts -->
 		</ul>
 
 		<!-- IF config.enableQuickReply -->

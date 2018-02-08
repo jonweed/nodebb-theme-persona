@@ -1,3 +1,5 @@
+@ro-topic-bg: @ro-panel-bg;
+
 .topic-main-buttons {
 	display:flex;
 	flex-flow:row-wrap;
@@ -39,6 +41,13 @@
 //
 .topic {
 
+	.post-tools {
+		display:flex;
+		flex-flow: row nowrap;
+		flex: 1 1 auto;
+		justify-content: flex-end;
+	}
+
 	.ro-replies { margin-top:10px; }
 
 	.replies-last {
@@ -56,10 +65,10 @@
 		.user-icon {
 			flex: 0 0 auto;
 			margin-right: 5px;
-			width: 22px;
-			height: 22px;
-			line-height: 22px;
-			font-size:11px;
+			width: 20px;
+			height: 20px;
+			line-height: 20px;
+			font-size:10px;
 			border-radius: 50%;
 		}
 	}
@@ -114,7 +123,7 @@
 	}
 
 	[component="user/picture"] {
-		flex: 0 0 50px;
+		flex: 0 0 40px;
 		position: relative;
 		margin-right:15px;
 		align-self:flex-start;
@@ -122,7 +131,7 @@
 //		&:before { .ro-arrow(right,10px,topright,50%,-15px,@ro-bar-color); margin-top:-10px; }
 
 		@media (max-width: @screen-sm-max) {
-			flex: 0 0 40px;
+//			flex: 0 0 40px;
 		}
 
 		@media (max-width: @screen-xs-max) {
@@ -170,20 +179,20 @@
 			color: #fff;
 			border-radius: 50%;
 			box-shadow: 0 1px 3px 0 #92989c;
-			width: 50px;
-			height: 50px;
-			line-height: 50px;
-			font-size: 25px;
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+			font-size: 20px;
 
 			> i {
 				position: absolute;
 				top: 0;
 				right: 0;
-				width: 14px;
-				height: 14px;
+				width: 12px;
+				height: 12px;
 				border-radius: 50%;
 				background: linear-gradient(0deg,#4caf50,#47a34b);
-				border: 2px solid @ro-panel-bg;
+				border: 2px solid @ro-topic-bg;
 				color: transparent;
 
 				&.offline { display:none; }
@@ -192,15 +201,7 @@
 			}
 
 			@media (max-width: @screen-sm-max) {
-				width: 40px;
-				height: 40px;
-				line-height: 40px;
-				font-size: 20px;
 
-				> i {
-					width: 12px;
-					height: 12px;
-				}
 			}
 
 			@media (max-width: @screen-xs-max) {
@@ -233,12 +234,14 @@
 
 	.ro-head {
 		display: flex;
-		flex-flow: row nowrap;
+		flex-flow: column nowrap;
 		align-items: flex-start;
-		flex: 1 1 auto;
-	//		padding: @ro-padding 0 0 @ro-padding;
-		border-radius: @ro-border-radius 0 0 @ro-border-radius;
-	//		background:@ro-bar-color;
+		flex: 0 0 200px;
+		border-radius: 0;
+		padding: 15px;
+		max-width: 200px;
+		align-self:flex-start;
+
 
 		@media (max-width: @screen-sm-max) {
 //			flex-flow:row nowrap;
@@ -251,7 +254,8 @@
 		}
 
 		> .ro-block {
-			display: block;
+			display: flex;
+			flex-flow:row nowrap;
 //			flex-flow: row nowrap;
 			flex: 1 1 auto;
 //			align-items:flex-start;
@@ -259,12 +263,34 @@
 
 			> * { display:inline-block; margin-right:5px; }
 
-			> .ro-head-block { display: block;}
+			> .ro-head-block {
+				display: flex;
+				flex-flow:column nowrap;
+			}
 
 			> .ro-username {
 				font-weight: 500;
 				text-shadow: 0 1px 2px #c2c3c7;
 			}
+
+
+
+			@media (max-width: @screen-sm-max) {
+//				flex-flow: row wrap;
+//				flex: 1 1 auto;
+//				margin: 0;
+	//				padding: @ro-padding-sm 0 5px @ro-padding-sm;
+//				align-items:center;
+
+				> * {
+//					margin:0 @ro-padding-sm 5px 0;
+				}
+			}
+		}
+
+		.ro-icons-block {
+			display:fex;
+			flex-flow: row wrap;
 
 			> .ro-group-label {
 				> i { margin-right:4px; }
@@ -313,17 +339,6 @@
 				}
 			}
 
-			@media (max-width: @screen-sm-max) {
-//				flex-flow: row wrap;
-//				flex: 1 1 auto;
-//				margin: 0;
-	//				padding: @ro-padding-sm 0 5px @ro-padding-sm;
-//				align-items:center;
-
-				> * {
-//					margin:0 @ro-padding-sm 5px 0;
-				}
-			}
 		}
 
 		> .ro-toggle-vote {
@@ -396,18 +411,13 @@
 // PANEL POST
 //
 [component="post"] {
-	background:@ro-panel-bg;
+	background:@ro-topic-bg;
 	border-bottom:1px solid @body-bg;
-	padding:15px;
-}
-
-[component="post"] > .ro-panel-post {
+	padding:0;
 	display: flex;
 	flex-flow:row nowrap;
 	align-items: stretch;
-//	margin-bottom: @ro-spacing;
-	padding: 0;
-	margin-top:10px;
+
 
 	@media (max-width: @screen-sm-max) {
 //		flex-flow: column nowrap;
@@ -433,18 +443,16 @@
 
 	> .ro-box {
 		display: flex;
-		flex:1 1 0px;
+//		flex:1 1 0px;
+		flex:1 1 auto;
 		flex-flow: column nowrap;
 		align-items: stretch;
-		position:relative;
-//		background: #fff;
-//		border-radius: @ro-border-radius @ro-border-radius;
-		margin-left:0;
-
-		&:before { .ro-arrow(right,10px,topleft,15px,-20px,#fff); }
+		background:#fff;
 
 //		&:before { .ro-arrow(bottom,10px,topleft,-20px,15px,#fff); }
 
+		position:relative;
+		&:before { .ro-arrow(right,10px,topleft,15px,-20px,@ro-bubble-bg); }
 
 
 		@media (max-width: @screen-sm-max) {
@@ -471,16 +479,10 @@
 
 
 
-[component="post"] > .ro-panel-post > .ro-bar {
 
 
 
-
-}
-
-
-
-[component="post"] > .ro-panel-post > .ro-box {
+[component="post"].ro-panel-post > .ro-box {
 	> .ro-drawer {
 		overflow:hidden;
 		border-radius:0 @ro-border-radius 0 0;
@@ -554,10 +556,11 @@
 	}
 
 	> .ro-body {
-		padding:@ro-padding 0 0 @ro-padding;
+		padding:@ro-padding;
 		flex:1 0 auto;
-		background: #fff;
+		background: @ro-bubble-bg;
 		border-radius: @ro-border-radius;
+
 
 
 //		@media (max-width: @screen-sm-max) {
@@ -601,22 +604,19 @@
 [component="post"].bg-success {
 	background-color:#e6fce3;
 
-	> .ro-panel-post {
+	[component="user/picture"] {
+		opacity:1; // overrides persona
 
-		> .ro-bar > [component="user/picture"] {
-			opacity:1; // overrides persona
-
-			> .ro-user-icon {
-				opacity:0;
-				cursor:default; //ugh
-			}
-
-			> .ro-selected {
-				display: block;
-			}
+		> .ro-user-icon {
+			opacity:0;
+			cursor:default; //ugh
 		}
 
+		> .ro-selected {
+			display: block;
+		}
 	}
+
 }
 
 
@@ -625,11 +625,13 @@
 	border-left: 4px solid @ro-replies-line-color;
 	padding: 0;
 	position: relative;
+	margin-left:8px;
+	margin-top:15px;
 //	margin-left: 236px;
 //	@media (max-width: @screen-sm-max) { margin-left:76px; }
 //	@media (max-width: @screen-xs-max) { margin-left:21px; }
 
-	[component="post"] > .ro-panel-post {
+	[component="post"] {
 		flex-flow: column nowrap;
 
 		.ro-head {
@@ -671,7 +673,7 @@
 					font-size: 12px;
 
 					> i {
-						border-color: @ro-panel-bg;
+						border-color: @ro-topic-bg;
 						width: 9px;
 						height: 9px;
 					}
@@ -688,7 +690,7 @@
 			margin-top:10px;
 			&:before { display:none; }
 			> .ro-body:before {
-				.ro-arrow(bottom,10px,topleft,-20px,15px,#fff);
+				.ro-arrow(bottom,10px,topleft,-20px,15px,@ro-bubble-bg);
 			}
 		}
 	}
