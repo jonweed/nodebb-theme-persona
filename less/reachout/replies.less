@@ -1,0 +1,35 @@
+.ro-toggle-head {
+  display:flex;
+  flex-flow:row nowrap;
+}
+
+
+.ro-panel-post-reply {
+  .ro-body {
+    overflow: hidden;
+    display:none;
+
+    [component="post/content"] { padding:15px; }
+  }
+}
+
+
+
+.toggle[data-toggle] {
+  flex: 1  1 auto;
+  text-align:right;
+  
+    &:after {
+      font: normal normal normal 14px/1 FontAwesome;
+      content: "\f107";
+      font-size: 16px;
+      color: #1976d2;
+      cursor:pointer;
+    }
+
+    &.open {
+      &:after {
+        content: "\f106";
+      }
+    }
+  }
