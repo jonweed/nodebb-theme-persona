@@ -5,6 +5,19 @@
 
 
 .ro-panel-post-reply {
+
+  [component="user/picture"] {
+    flex:0 0 30px;
+
+    > .ro-user-icon {
+      width:30px;
+      height:30px;
+      line-height:30px;
+      font-size:15px;
+      > i { width:10px; height:10px;}
+    }
+  }
+
   .ro-body {
     overflow: hidden;
     display:none;
@@ -18,7 +31,7 @@
 .toggle[data-toggle] {
   flex: 1  1 auto;
   text-align:right;
-  
+
     &:after {
       font: normal normal normal 14px/1 FontAwesome;
       content: "\f107";
