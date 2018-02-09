@@ -1,7 +1,7 @@
 <div class="ro-card" style="border-color: {../bgColor}">
 	<!-- BEGIN posts -->
 	<!-- IF @first -->
-		<a class="ro-icon" href="{config.relative_path}/user/{../user.userslug}">	
+		<a class="ro-icon" href="{config.relative_path}/user/{../user.userslug}">
 			<!-- IF ../user.picture -->
 			<img class="ro-user-icon" title="{../user.username}" alt="{../user.username}" src="{../user.picture}">
 			<!-- ELSE -->
@@ -15,12 +15,12 @@
 				{../user.username} &bull;
 				<a class="ro-permalink" href="{config.relative_path}/post/{posts.pid}">
 					<span class="timeago" title="{../timestampISO}"></span>
-				</a>				
+				</a>
 			</div>
-			<div class="toggle"></div>
+			<div class="toggle" data-box="post/content"></div>
 		</div>
 
-		<div class="post-content">
+		<div class="post-content" box="post/content">
 			<div>
 				{../content}
 			</div>

@@ -12,10 +12,13 @@
 .breadcrumb .fa { margin:0; color:inherit; }
 
 .breadcrumb-menu {
+	display:none;
 	overflow:hidden;
-	height:0;
 	position:relative;
 	top:-10px;
+
+	@media (min-width: @screen-xs-max) { display:none !important; }
+
 
 	> .ro-wrap {
 		display:flex;

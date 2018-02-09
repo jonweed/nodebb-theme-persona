@@ -84,7 +84,7 @@
         </div>
         <!-- ENDIF !reputation:disabled -->
 
-        <div class="toggle" data-toggle=".ro-body"></div>
+        <div class="toggle" data-box="post/body"></div>
 
 
       </div>
@@ -105,21 +105,23 @@
 				<!-- ENDIF !reputation:disabled -->
 			</div><!-- .ro-drawer -->
 
-			<div class="ro-body">
+			<div class="ro-body" box="post/body">
 
 				<div component="post/content" itemprop="text">
 				{posts.content}
-				</div>
-
-				<!-- IF posts.user.signature -->
-				<div component="post/signature" data-uid="{posts.user.uid}" class="post-signature">{posts.user.signature}</div>
-				<!-- ENDIF posts.user.signature -->
 
 				<div class="post-tools">
 					<a component="post/reply" href="#" class="no-select <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->">[[topic:reply]]</a>
 					<a component="post/quote" href="#" class="no-select <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->">[[topic:quote]]</a>
 					<!-- IMPORT partials/topic/post-menu.tpl -->
 				</div><!-- .post-tools -->
+				</div>
+
+				<!-- IF posts.user.signature -->
+				<div component="post/signature" data-uid="{posts.user.uid}" class="post-signature">{posts.user.signature}</div>
+				<!-- ENDIF posts.user.signature -->
+
+
 
 			</div><!-- .ro-body -->
 

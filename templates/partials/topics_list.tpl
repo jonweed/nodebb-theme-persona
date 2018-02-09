@@ -39,7 +39,7 @@
 
 
 				<div class="ro-splitblock">
-						
+
 					<div class="ro-title">
 						<div>
 							<i component="topic/pinned" class="fa fa-thumb-tack <!-- IF !topics.pinned -->hide<!-- ENDIF !topics.pinned -->" title="[[topic:pinned]]"></i>
@@ -58,7 +58,7 @@
 						<small class="ro-category-link" style="color:{topics.category.bgColor};">
 							<a href="{config.relative_path}/category/{topics.category.slug}"><i style="color:{topics.category.bgColor};" class="fa {topics.category.icon}"></i> {topics.category.name}</a> &bull;
 						</small>
-						<!-- ENDIF !template.category -->					
+						<!-- ENDIF !template.category -->
 
 						<small class="ro-posted-by">
 							Posted by <a href="<!-- IF topics.user.userslug -->{config.relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">{topics.user.username}</a> &bull; <span class="timeago" title="{topics.timestampISO}"></span>
@@ -83,7 +83,7 @@
 
 					<div class="ro-stats">
 						<div class="stats posts">
-							<span class="human-readable-number" title="{topics.postcount}">{topics.postcount}</span><small>[[global:posts]]</small>						
+							<span class="human-readable-number" title="{topics.postcount}">{topics.postcount}</span><small>[[global:posts]]</small>
 						</div>
 						<div style="display:none">
 							<div class="stats views">
@@ -93,7 +93,7 @@
 								<span class="human-readable-number" title="{topics.votes}">{topics.votes}</span><small>[[global:votes]]</small>
 							</div>
 						</div>
-					</div><!-- .ro-stats --->	
+					</div><!-- .ro-stats --->
 
 				</div><!-- .ro-splitblock -->
 
@@ -103,7 +103,7 @@
 
 		</div><!-- .ro-bar -->
 
-		<div class="ro-box" style="border-color:{topics.category.bgColor}">
+		<div class="ro-box" component="box" style="border-color:{topics.category.bgColor}">
 
 			<!-- IF topics.unreplied -->
 			<div class="ro-teaser no-reply">
@@ -112,36 +112,36 @@
 				</div>
 			</div><!-- .ro-teaser.no-reply -->
 			<!-- ELSE -->
-			<!-- IF topics.teaser.pid -->			
+			<!-- IF topics.teaser.pid -->
 			<a class="ro-icon" href="{config.relative_path}/user/{topics.teaser.user.userslug}">
-			
+
 				<!-- IF topics.teaser.user.picture -->
 				<img class="ro-user-icon" title="{topics.teaser.user.username}" alt="{topics.teaser.user.username}" src="{topics.teaser.user.picture}">
 				<!-- ELSE -->
 				<span class="ro-user-icon" title="{topics.teaser.user.username}" style="background: {topics.teaser.user.icon:bgColorImage};">{topics.teaser.user.icon:text}</span>
 				<!-- ENDIF topics.teaser.user.picture -->
-			</a>				
+			</a>
 
 			<div class="ro-block">
-				
+
 				<div class="ro-toggle-btn">
 					<div class="ro-permalink">
 						{topics.teaser.user.username} replied <a href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}"><span class="timeago" title="{topics.teaser.timestampISO}"></span></a>
 					</div>
-					<div class="toggle"></div>
+					<div class="toggle" data-box="post/teaser"></div>
 				</div><!-- .ro-toggle-btn -->
 
-				<div class="ro-teaser" component="topic/teaser">
+				<div class="ro-teaser" component="topic/teaser" box="post/teaser">
 					<div class="post-content">
 						{topics.teaser.content}
 					</div>
 				</div><!-- .ro-teaser -->
-				
+
 
 			</div><!-- .ro-block -->
 
 			<!-- ENDIF topics.teaser.pid -->
-			<!-- ENDIF topics.unreplied -->	
+			<!-- ENDIF topics.unreplied -->
 
 		</div><!-- .ro-box -->
 

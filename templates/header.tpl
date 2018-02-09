@@ -76,5 +76,5 @@
 				<!-- IMPORT partials/menu.tpl -->
 			</div>
 		</nav>
-		<div class="container" id="content">
+		<div class="container" id="content" component="page/content">
 		<!-- IMPORT partials/noscript/warning.tpl -->

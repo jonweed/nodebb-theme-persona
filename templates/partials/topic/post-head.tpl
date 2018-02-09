@@ -20,7 +20,25 @@
         <!-- ENDIF posts.user.banned -->
       </a>
 
-      <a class="ro-permalink timeago" href="{config.relative_path}/post/{posts.pid}" title="{posts.timestampISO}"></a>
+      <div>
+        <a class="ro-permalink timeago" href="{config.relative_path}/post/{posts.pid}" title="{posts.timestampISO}"></a>
+        <span class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+          <i class="fa fa-pencil pointer edit-icon ro-edit-icon <!-- IF !posts.editor.username -->hidden<!-- ENDIF !posts.editor.username -->"></i>
+          <small data-editor="{posts.editor.userslug}" component="post/editor" class="hidden">
+            [[global:last_edited_by, {posts.editor.username}]] <span class="timeago" title="{posts.editedISO}"></span>
+          </small>
+
+          <!-- IF posts.user.custom_profile_info.length -->
+          <span>
+          &#124;
+          <!-- BEGIN custom_profile_info -->
+          {posts.user.custom_profile_info.content}
+          <!-- END custom_profile_info -->
+          </span>
+          <!-- ENDIF posts.user.custom_profile_info.length -->
+        </span>
+      </div>
+
 
     </div>
   </div><!-- .ro-block -->
@@ -44,22 +62,6 @@
       <span>Private</span>
     </div>
     <!-- ENDIF supportForum -->
-
-    <span class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
-      <i class="fa fa-pencil pointer edit-icon ro-edit-icon <!-- IF !posts.editor.username -->hidden<!-- ENDIF !posts.editor.username -->"></i>
-      <small data-editor="{posts.editor.userslug}" component="post/editor" class="hidden">
-        [[global:last_edited_by, {posts.editor.username}]] <span class="timeago" title="{posts.editedISO}"></span>
-      </small>
-
-      <!-- IF posts.user.custom_profile_info.length -->
-      <span>
-      &#124;
-      <!-- BEGIN custom_profile_info -->
-      {posts.user.custom_profile_info.content}
-      <!-- END custom_profile_info -->
-      </span>
-      <!-- ENDIF posts.user.custom_profile_info.length -->
-    </span>
   </div>
 
 
