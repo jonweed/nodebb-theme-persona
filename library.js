@@ -54,7 +54,7 @@ library.addPostData = function(data, callback) {
 };
 
 library.addRepliesToTopic = function(data, callback) {
-	
+
 //	console.log(data.templateData.topics);
 //console.log(data.templateData.topics[1].teaser);
 //console.log(data.templateData.cid, data.req.uid, 3);

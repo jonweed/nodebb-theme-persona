@@ -44,8 +44,6 @@
 		flex-flow: column;
 		flex: 1 0 auto;
 		padding:@ro-padding;
-		background: @ro-bubble-bg;
-
 
 
 //		@media (max-width: @screen-sm-max) {
@@ -83,14 +81,14 @@
 
 	.ro-replies {
 		margin-left:200px;
-		background:#f5f9ff;
 
 		[component="post/reply-count"] {
-			border-top:1px solid @ro-topic-bg;
 			padding:4px 15px;
 			display:block;
 			font-size:13px;
-			margin:0;
+			background:#f5f9ff;
+			border-radius:0 0 @ro-border-radius @ro-border-radius;
+			margin:-9px 10px 10px 10px;
 
 			.user-icon {
 				flex: 0 0 auto;
@@ -164,8 +162,6 @@
 	[component="user/picture"] {
 		flex: 0 0 40px;
 		position: relative;
-		margin-right:15px;
-		align-self:flex-start;
 
 //		&:before { .ro-arrow(right,10px,topright,50%,-15px,@ro-bar-color); margin-top:-10px; }
 
@@ -299,14 +295,15 @@
 
 		> .ro-block {
 			display: flex;
-			flex-flow:row nowrap;
+			flex-flow:column nowrap;
 			flex: 0 0 auto;
 			margin-bottom:15px;
-			align-items:flex-start;
+			align-items:center;
 
 			> .ro-head-block {
 				display: flex;
 				flex-flow:column nowrap;
+				align-items:center;
 			}
 
 			> .ro-username {
@@ -489,6 +486,10 @@
 		flex-flow: column nowrap;
 		align-items: stretch;
 		background:#fff;
+		margin:10px;
+		background: @ro-bubble-bg;
+		border-radius:@ro-border-radius @ro-border-radius 0 0;
+
 		position:relative;
 		&:before { .ro-arrow(right,10px,topleft,15px,-20px,@ro-bubble-bg); }
 

@@ -172,3 +172,45 @@
 		}
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+  .chevtest {
+		position: relative;
+		text-align: center;
+		padding: 12px;
+		margin-bottom: 6px;
+		height: auto;
+		width: 100%;
+
+
+    &:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 51%;
+			background: red;
+			transform: skew(0deg, 6deg);
+    }
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			height: 100%;
+			width: 50%;
+			background: red;
+			transform: skew(0deg, -6deg);
+		}
+  }

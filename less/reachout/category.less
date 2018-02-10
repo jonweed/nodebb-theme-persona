@@ -14,7 +14,7 @@
 	display: flex;
 	flex-flow:column nowrap;
 	align-items: stretch;
-	padding: 15px;
+	padding: 0;
 	border-bottom:1px solid @body-bg;
 	transition:none;
 
@@ -27,6 +27,7 @@
 		flex:1 1 auto;
 		flex-flow: row nowrap;
 		align-items:flex-start;
+		padding:@ro-padding;
 
 		@media (max-width: @screen-sm-max) {
 //			border-radius:@ro-border-radius @ro-border-radius 0 0;
@@ -39,7 +40,7 @@
 		flex-flow: row nowrap;
 		align-items: flex-start;
 		position:relative;
-		margin:0;
+		margin:10px;
 //		border-top:2px solid;
 
 		@media (max-width: @screen-sm-max) {
@@ -59,10 +60,10 @@
 
 
 [component="category/topic"].ro-panel-category > .ro-bar {
-	> .ro-icon {
+	.ro-icon {
 		flex:0 0 auto;
 		display:block;
-		margin: 0 @ro-padding @ro-padding 0;
+		margin: 0 @ro-padding 0 0;
 		position: relative;
 //		align-self:flex-start;
 
@@ -112,7 +113,7 @@
 			align-items:center;
 
 			> * {
-				margin:0 @ro-padding @ro-padding 0;
+				margin:0 @ro-padding 0 0;
 			}
 
 			.ro-stats { margin: 0;
@@ -154,7 +155,7 @@
 			justify-content:flex-start;
 
 			> * {
-				margin:0 @ro-padding @ro-padding 0;
+				margin:0;
 			}
 
 			> .stats {
@@ -222,15 +223,15 @@
 		display :none;
 	}
 
-	> .ro-icon {
-		margin: 10px 23px 0 8px;
+	.ro-icon {
+		margin: 0 @ro-padding 0 0;
 		position:relative;
 
 //		@media (max-width: @screen-sm-max) { margin:@ro-padding-sm 15px 0 0; }
 
 		&:before {
-					.ro-arrow(right,10px,topright,50%,-23px,@ro-bubble-bg);
-					margin-top:-10px;
+	//				.ro-arrow(right,10px,topright,50%,-23px,@ro-bubble-bg);
+//					margin-top:-10px;
 		}
 
 		> .ro-user-icon {
@@ -259,6 +260,9 @@
 			align-items: stretch;
 			flex: 1  1 auto;
 			justify-content: flex-start;
+
+			position:relative;
+			&:before {.ro-arrow(bottom,10px,topleft,-20px,60px,@ro-bubble-bg); }
 
 
 			> .ro-permalink {
@@ -401,6 +405,7 @@
 
 		> .ro-block {
 			background:#dbf0d8;
+			.ro-toggle-btn:before { border-bottom-color:#dbf0d8; }
 //			&:before { border-right-color:#dbf0d8; }
 			@media (max-width: @screen-sm-max) {
 				&:before {

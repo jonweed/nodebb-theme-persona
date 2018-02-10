@@ -1,17 +1,16 @@
-<div class="ro-card" style="border-color: {../bgColor}">
+<div class="ro-card<!-- IF !../posts.length --> no-reply<!-- ENDIF !../posts.length -->" style="border-color: {../bgColor}">
 	<!-- BEGIN posts -->
 	<!-- IF @first -->
-		<a class="ro-icon" href="{config.relative_path}/user/{../user.userslug}">
-			<!-- IF ../user.picture -->
-			<img class="ro-user-icon" title="{../user.username}" alt="{../user.username}" src="{../user.picture}">
-			<!-- ELSE -->
-			<span class="ro-user-icon" title="{../user.username}" style="background-color: {../user.icon:bgColor};">{../user.icon:text}</span>
-			<!-- ENDIF ../user.picture -->
-		</a>
-
 	<div component="category/posts">
 		<div class="ro-toggle-btn">
 			<div class="ro-push">
+				<a class="ro-icon" href="{config.relative_path}/user/{../user.userslug}">
+					<!-- IF ../user.picture -->
+					<img class="ro-user-icon" title="{../user.username}" alt="{../user.username}" src="{../user.picture}">
+					<!-- ELSE -->
+					<span class="ro-user-icon" title="{../user.username}" style="background-color: {../user.icon:bgColor};">{../user.icon:text}</span>
+					<!-- ENDIF ../user.picture -->
+				</a>
 				{../user.username} &bull;
 				<a class="ro-permalink" href="{config.relative_path}/post/{posts.pid}">
 					<span class="timeago" title="{../timestampISO}"></span>
@@ -30,7 +29,7 @@
 	<!-- END posts -->
 
 	<!-- IF !../posts.length -->
-	<div component="category/posts" class="no-reply">
+	<div component="category/posts">
 		<div class="post-content">
 			<div>
 				[[category:no_new_posts]]

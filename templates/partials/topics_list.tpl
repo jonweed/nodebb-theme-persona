@@ -113,19 +113,20 @@
 			</div><!-- .ro-teaser.no-reply -->
 			<!-- ELSE -->
 			<!-- IF topics.teaser.pid -->
-			<a class="ro-icon" href="{config.relative_path}/user/{topics.teaser.user.userslug}">
 
-				<!-- IF topics.teaser.user.picture -->
-				<img class="ro-user-icon" title="{topics.teaser.user.username}" alt="{topics.teaser.user.username}" src="{topics.teaser.user.picture}">
-				<!-- ELSE -->
-				<span class="ro-user-icon" title="{topics.teaser.user.username}" style="background: {topics.teaser.user.icon:bgColorImage};">{topics.teaser.user.icon:text}</span>
-				<!-- ENDIF topics.teaser.user.picture -->
-			</a>
 
 			<div class="ro-block">
 
 				<div class="ro-toggle-btn">
 					<div class="ro-permalink">
+						<a class="ro-icon" href="{config.relative_path}/user/{topics.teaser.user.userslug}">
+
+							<!-- IF topics.teaser.user.picture -->
+							<img class="ro-user-icon" title="{topics.teaser.user.username}" alt="{topics.teaser.user.username}" src="{topics.teaser.user.picture}">
+							<!-- ELSE -->
+							<span class="ro-user-icon" title="{topics.teaser.user.username}" style="background: {topics.teaser.user.icon:bgColorImage};">{topics.teaser.user.icon:text}</span>
+							<!-- ENDIF topics.teaser.user.picture -->
+						</a>
 						{topics.teaser.user.username} replied <a href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}"><span class="timeago" title="{topics.teaser.timestampISO}"></span></a>
 					</div>
 					<div class="toggle" data-box="post/teaser"></div>

@@ -6,7 +6,7 @@
 		<div class="ro-icon" style="{function.generateCategoryBackground}">
 			<i class="fa fa-fw {../icon}"></i>
 		</div>
-		
+
 		<div class="ro-head">
 
 			<div class="ro-title">
@@ -27,7 +27,7 @@
 				</div>
 				<!-- ENDIF ../descriptionParsed -->
 			</div><!-- .ro-title --->
-			
+
 			<div class="ro-stats">
 
 				<!-- IF !../link -->
@@ -39,9 +39,9 @@
 				<div class="stats" component="category/post-count">
 					<span class="{../unread-class} human-readable-number" title="{../supportForum:stats.postCount}">{../supportForum:stats.postCount}</span><small>[[global:posts]]</small>
 				</div>
-				
+
 				<!-- ELSE -->
-				
+
 				<div class="stats" component="category/topic-count">
 					<span class="{../unread-class} human-readable-number" title="{../totalTopicCount}">{../totalTopicCount}</span><small>[[global:topics]]</small>
 				</div>
@@ -66,4 +66,4 @@
 
 	</div><!-- .ro-box -->
 
-</li><!-- .ro-panel -->	
+</li><!-- .ro-panel -->
