@@ -13,10 +13,10 @@
 @ro-parentlink-bgcolor:		#F2F4F6;
 @ro-bar-bghover:			#EFF2F5;
 @ro-replies-line-color:		#CDD2D6;
-@ro-spinner-color:			#1976d2;
+@ro-spinner-color:			@brand-primary;
 @ro-head-horizontal-width:	150px;
 
-@ro-panel-bg:				#e9edf2;  // #E9EEF2;
+@ro-panel-bg:				#e6edf2; // #D6E5F0; // #dce9f2; // #e4e6eb; // #e9edf2;  // #dce0e5; // #e9edf2;  // #E9EEF2;
 @ro-bubble-bg:			#fff;
 @ro-topic-bg:				@ro-panel-bg;
 
@@ -249,8 +249,8 @@
 
 .btn-reply, .btn-quote {
 	background: #fff;
-	border: 1px solid #1976d2;
-	color: #1976d2;
+	border: 1px solid @brand-primary;
+	color: @brand-primary;
 
   &:hover,
   &:focus,
@@ -259,7 +259,7 @@
   &.active,
   .open > .dropdown-toggle& {
     color: #fff;
-    background-color: #1976d2;
+    background-color: @brand-primary;
   }
   &:active,
   &.active,
