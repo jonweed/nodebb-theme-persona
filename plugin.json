@@ -19,6 +19,9 @@
 		"lib/modules/autohidingnavbar.min.js",
 		"lib/modules/quickreply.js"
 	],
+	"staticDirs": {
+		"static": "./static"
+	},
 	"modules": {
 		"pulling.js": "node_modules/pulling/build/pulling-drawer.js"
 	},

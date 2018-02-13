@@ -7,15 +7,12 @@
 
 .category > ul > li {
 	border:none;
-	background:@ro-panel-bg;
 }
 
 [component="category/topic"].ro-panel-category {
 	display: flex;
 	flex-flow:column nowrap;
 	align-items: stretch;
-	padding: 0;
-	border-bottom:1px solid @body-bg;
 	transition:none;
 
 	@media (max-width: @screen-sm-max) {
@@ -28,10 +25,8 @@
 		flex-flow: row nowrap;
 		align-items:flex-start;
 		padding:@ro-padding;
-
-		@media (max-width: @screen-sm-max) {
-//			border-radius:@ro-border-radius @ro-border-radius 0 0;
-		}
+		background:@ro-panel-bg;
+		border-radius: @ro-border-radius @ro-border-radius 0 0;
 	}
 
 	> .ro-box {
@@ -40,16 +35,9 @@
 		flex-flow: row nowrap;
 		align-items: flex-start;
 		position:relative;
-		margin:10px;
-//		border-top:2px solid;
-
-		@media (max-width: @screen-sm-max) {
-//			margin:5px 0 0 47px;
-		}
-
-		@media (max-width: @screen-xs-max) {
-//			margin:0 0 0 45px;
-		}
+		padding:10px;
+		background:@ro-panel-bg;
+		border-radius: 0 0 @ro-border-radius @ro-border-radius;
 	}
 
 	@media (max-width: @screen-sm-max) {
@@ -452,44 +440,34 @@
 	[component="category"] {
 		display:flex;
 		flex-flow:row wrap;
-		border-left:1px solid @body-bg;
-		border-top:1px solid @body-bg;
 
 
 		> [component="category/topic"].ro-panel-category {
-			flex:1 1 40%;
-			border-right:1px solid @body-bg;
+			flex:1 1 50%;
 
 			&:last-child { max-width: 50%; }
 		}
 	}
-
-	[component="category"] {
-		> li:nth-of-type(1) {
-			border-top-left-radius:@ro-border-radius;
-
-			&:nth-last-child(1) { border-top-right-radius:@ro-border-radius; }
-		}
-
-		> li:nth-of-type(2) {
-			border-top-right-radius:@ro-border-radius;
-		}
+}
 
 
-		> li:nth-last-child(1) {
+[component="category"] {
+	> [component="category/topic"] {
+		padding-top:@ro-grid-spacing;
+		padding-bottom:@ro-grid-spacing;
+		&:nth-of-type(1) { padding-top: 0; }
+		&:nth-last-of-type(1) { padding-bottom:0; }
+
+		@media (min-width: @screen-lg) {
 			&:nth-of-type(odd) {
-				border-bottom-left-radius:@ro-border-radius;
-				border-bottom-right-radius:@ro-border-radius;
+				padding-right:@ro-grid-spacing;
+				&:nth-last-of-type(2) { padding-bottom: 0; }
 			}
-			&:nth-of-type(even) {
-				border-bottom-left-radius:0;
-				border-bottom-right-radius:@ro-border-radius;
-			}
-		}
 
-		> li:nth-last-child(2) {
-			&:nth-of-type(odd) { border-bottom-left-radius: @ro-border-radius; }
-			&:nth-of-type(even) { border-bottom-right-radius:@ro-border-radius; }
+			&:nth-of-type(even) {
+				padding-left:@ro-grid-spacing;
+				&:nth-of-type(2) { padding-top: 0; }
+			}
 		}
 	}
 }

@@ -8,11 +8,10 @@
 					<i class="fa fa-lg fa-comment-o"></i>
 				</button>
 
-				<!-- IF brand:logo -->
 				<a href="<!-- IF brand:logo:url -->{brand:logo:url}<!-- ELSE -->{relative_path}/<!-- ENDIF brand:logo:url -->">
-					<img alt="{brand:logo:alt}" class="{brand:logo:display} forum-logo" src="{brand:logo}" />
+					<img alt="{brand:logo:alt}" class="{brand:logo:display} forum-logo" src="/plugins/nodebb-theme-reachout/static/logo.svg" />
 				</a>
-				<!-- ENDIF brand:logo -->
+
 				<!-- IF config.showSiteTitle -->
 				<a href="<!-- IF title:url -->{title:url}<!-- ELSE -->{relative_path}/<!-- ENDIF title:url -->">
 					<h1 class="navbar-brand forum-title">{config.siteTitle}</h1>
@@ -71,7 +70,7 @@
 							<img component="header/userpicture" src="{user.picture}" alt="{user.username}"/>
 							<!-- ELSE -->
 							<span component="header/usericon" class="user-icon" style="background: {user.icon:bgColorImage}; display: block;">{user.icon:text}</span>
-							<!-- ENDIF user.picture --> 
+							<!-- ENDIF user.picture -->
 							<span id="user-header-name" class="visible-xs-inline">{user.username}</span>
 						</label>
 						<input type="checkbox" class="hidden" id="user-control-list-check" aria-hidden="true">

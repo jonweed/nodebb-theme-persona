@@ -4,7 +4,7 @@
 	<div component="category/posts">
 		<div class="ro-toggle-btn">
 			<div class="ro-push">
-				<a class="ro-icon" href="{config.relative_path}/user/{../user.userslug}">
+				<a class="ro-latest-icon" href="{config.relative_path}/user/{../user.userslug}">
 					<!-- IF ../user.picture -->
 					<img class="ro-user-icon" title="{../user.username}" alt="{../user.username}" src="{../user.picture}">
 					<!-- ELSE -->
