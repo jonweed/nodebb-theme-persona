@@ -119,36 +119,27 @@ ul.categories > li, ul.topic-list > li, ul.posts > li { list-style:none; }
 
 
 
-[component="categories/category"].ro-panel-category-item > .ro-box {
-	> .ro-card  {
-		display:flex;
-		flex-flow:row nowrap;
-		align-items:flex-start;
+[component="categories/category"] > .ro-box > .ro-card {
+	display:flex;
+	flex-flow:row nowrap;
+	align-items:flex-start;
 
-		.ro-latest-icon {
-			margin: 0 15px 0 0;
+	.ro-latest-icon {
+		margin: 0 15px 0 0;
 
-			> .ro-user-icon {
-				display:inline-block;
-				color: #fff;
-				border-radius:50%;
-				height: 22px;
-				width:22px;
-				line-height:22px;
-				text-align:center;
-				font-size:11px;
-			}
+		> .ro-user-icon {
+			display:inline-block;
+			color: #fff;
+			border-radius:50%;
+			height: 22px;
+			width:22px;
+			line-height:22px;
+			text-align:center;
+			font-size:11px;
 		}
 	}
 
-
-	> .ro-card.no-reply [component="category/posts"] {
-			display:none;
-	}
-
-
-
-	> .ro-card > [component="category/posts"] {
+	[component="category/posts"] {
 		display:flex;
 		flex-flow:column nowrap;
 		flex:1 1 auto;
@@ -251,6 +242,8 @@ ul.categories > li, ul.topic-list > li, ul.posts > li { list-style:none; }
 		}
 
 	}
+
+	&.no-reply [component="category/posts"] { display:none; }
 
 }
 
