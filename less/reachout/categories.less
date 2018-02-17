@@ -67,34 +67,37 @@ ul.categories > li, ul.topic-list > li, ul.posts > li { list-style:none; }
 	display: flex;
 	flex-flow:column nowrap;
 	align-items: stretch;
-
 	margin:0;
 
-	> .ro-bar {
-		display: flex;
-		flex:0 1 auto;
-		flex-flow: row nowrap;
-		background:@ro-panel-bg;
-		border-radius: @ro-border-radius @ro-border-radius 0 0;
-		align-items:stretch;
-		padding:15px;
-	}
+	> .bg-wrap {
+		background-color:#e8f0f7;
+		background-image: url(/plugins/nodebb-theme-reachout/static/card.svg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		border-radius: @ro-border-radius;
 
-	> .ro-box {
-		display: flex;
-		flex:1 1 auto;
-		flex-flow: column nowrap;
-		align-items: stretch;
-		background:@ro-panel-bg;
-		position:relative;
-		border-radius: 0 0 @ro-border-radius @ro-border-radius;
-		padding:10px;
+		> .ro-bar {
+			display: flex;
+			flex:0 1 auto;
+			flex-flow: row nowrap;
+			align-items:stretch;
+			padding:15px;
+		}
+
+		> .ro-box {
+			display: flex;
+			flex:1 1 auto;
+			flex-flow: column nowrap;
+			align-items: stretch;
+			position:relative;
+			padding:10px;
+		}
 	}
 }
 
 
 
-[component="categories/category"].ro-panel-category-item > .ro-bar {
+[component="categories/category"].ro-panel-category-item > .bg-wrap > .ro-bar {
 
 	> .ro-head {
 		display:flex;
@@ -119,7 +122,7 @@ ul.categories > li, ul.topic-list > li, ul.posts > li { list-style:none; }
 
 
 
-[component="categories/category"] > .ro-box > .ro-card {
+[component="categories/category"] > .bg-wrap > .ro-box > .ro-card {
 	display:flex;
 	flex-flow:row nowrap;
 	align-items:flex-start;
@@ -152,7 +155,7 @@ ul.categories > li, ul.topic-list > li, ul.posts > li { list-style:none; }
 			align-items: center;
 
 			position:relative;
-			&:before {.ro-arrow(bottom,10px,topleft,-20px,60px,@ro-bubble-bg); }
+			&:before {.ro-arrow(bottom,15px,topleft,-25px,55px,@ro-bubble-bg); z-index:-1; }
 
 
 
