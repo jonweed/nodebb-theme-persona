@@ -19,35 +19,41 @@
 		align-items: stretch;
 	}
 
-	> .ro-bar {
-		display: flex;
-		flex:1 1 auto;
-		flex-flow: row nowrap;
-		align-items:flex-start;
-		padding:@ro-padding;
-		background:@ro-panel-bg;
-		border-radius: @ro-border-radius @ro-border-radius 0 0;
-	}
-
-	> .ro-box {
-		display: flex;
-		flex:1 1 auto;
-		flex-flow: row nowrap;
-		align-items: flex-start;
-		position:relative;
-		padding:10px;
-		background:@ro-panel-bg;
-		border-radius: 0 0 @ro-border-radius @ro-border-radius;
-	}
-
 	@media (max-width: @screen-sm-max) {
 		flex-flow:column nowrap;
+	}
+
+	> .bg-wrap {
+		background-color:#e8f0f7;
+		background-image: url(/plugins/nodebb-theme-reachout/static/card3.svg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		border-radius: @ro-border-radius;
+		flex:1 1 100%;
+
+		> .ro-bar {
+			display: flex;
+			flex:1 1 auto;
+			flex-flow: row nowrap;
+			align-items:flex-start;
+			padding:@ro-padding;
+		}
+
+		> .ro-box {
+			display: flex;
+			flex:1 1 auto;
+			flex-flow: row nowrap;
+			align-items: flex-start;
+			position:relative;
+			padding:10px;
+		}
+
 	}
 }
 
 
 
-[component="category/topic"].ro-panel-category > .ro-bar {
+[component="category/topic"].ro-panel-category > .bg-wrap > .ro-bar {
 	.ro-icon {
 		flex:0 0 auto;
 		display:block;
@@ -205,7 +211,7 @@
 
 
 
-[component="category/topic"].ro-panel-category > .ro-box {
+[component="category/topic"].ro-panel-category > .bg-wrap > .ro-box {
 
 	> .ro-teaser.no-reply {
 		display :none;
@@ -378,7 +384,7 @@
 //
 // SELECTED
 //
-[component="category/topic"].ro-panel-category.selected {
+[component="category/topic"].ro-panel-category.selected > .bg-wrap {
 	background: #e6fce3;
 
 	> .ro-bar {
