@@ -1,4 +1,4 @@
-<li component="categories/category" data-cid="{../cid}" data-numRecentReplies="{../numRecentReplies}" class="ro-panel-category-item auto">
+<li component="categories/category" data-cid="{../cid}" data-numRecentReplies="{../numRecentReplies}" class="ro-panel ro-panel-category-item auto">
 	<meta itemprop="name" content="{../name}">
 	<div class="bg-wrap">
 		<div class="ro-bar">

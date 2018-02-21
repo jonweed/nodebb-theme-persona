@@ -39,6 +39,78 @@
 //
 .topic {
 
+	> .ro-drawer {
+		overflow:hidden;
+		border-radius:0 @ro-border-radius 0 0;
+
+		@media (max-width: @screen-sm-max) { border-radius:0; }
+
+
+		> .ro-vote-sm {
+			display: none;
+			text-align: center;
+			background:linear-gradient(#DBDEE1,@ro-bar-color);
+
+			@media (max-width: @screen-xs-max) {
+				display:flex;
+			}
+
+			> * {
+				flex-grow:1;
+				flex-basis:50%;
+				padding:10px 0;
+				margin:10px;
+			}
+
+			> .ro-upvote, > .ro-downvote {
+				cursor:pointer;
+				border-radius:@ro-border-radius;
+
+				> i {
+					color:#333; //@ro-vote-color;
+					font-size:16px;
+					margin-bottom:5px;
+				}
+
+				> span {
+					text-transform:uppercase;
+					font-weight:200;
+					color:#333;
+					font-size:13px;
+					display:block;
+				}
+
+				&:hover {
+					background:@ro-bar-bghover;
+				}
+			}
+
+			> .ro-upvote {
+				&.upvoted > i {
+					color:@brand-primary;
+				}
+
+				&:hover {
+					> i, > span {
+						color:green;
+					}
+				}
+			}
+
+			> .ro-downvote {
+				&.downvoted > i {
+					color:@brand-primary;
+				}
+
+				&:hover {
+					> i, > span {
+					color:red;
+					}
+				}
+			}
+		}
+	}
+
 	.ro-icons-block {
 		display:flex;
 		flex-flow: row wrap;
@@ -146,9 +218,12 @@
 	.ro-body {
 		display: flex;
 		flex-flow: column;
-		flex: 1 0 auto;
-		padding:@ro-padding @ro-padding 0 @ro-padding;
-		background: @ro-bubble-bg;
+		flex: 1 1 auto;
+		padding:0;
+		margin:0;
+
+		position:relative;
+		&:before { .ro-arrow(right,10px,topleft,10px,-20px,@ro-bubble-bg); }
 
 
 
@@ -157,6 +232,9 @@
 
 		> [component="post/content"] {
 			flex: 1 0 auto;
+			padding:@ro-padding;
+			background: @ro-bubble-bg;
+
 			> *:first-child { margin-top:0; padding-top:0; }
 			> *:last-child { margin-bottom:0; padding-bottom:0; }
 		}
@@ -191,18 +269,14 @@
 	}
 
 	.ro-replies {
-		margin-left:160px;
-		background: #fff;
-		border-radius: inherit;
-		min-height:@ro-padding;
+		margin-left:150px;
+		margin-right:15px;
 	}
 
 	[component="post/reply-count"] {
 		display:block;
 		font-size:12px;
 		padding: 10px 15px;
-		background:#fff;
-		border-top:1px solid #E9EDF2;
 
 		.user-icon {
 			flex: 0 0 auto;
@@ -394,7 +468,7 @@
 		align-items: center;
 		flex: 0 0 150px;
 		border-radius: 0;
-		padding: 0 @ro-padding @ro-padding @ro-padding;
+		padding: @ro-padding;
 		max-width: 150px;
 
 
@@ -472,166 +546,22 @@
 //
 // PANEL POST
 //
-[component="post"] {
-	display: flex;
-	flex-flow:column nowrap;
-	align-items:stretch;
-	padding:0;
-	background:@ro-topic-bg;
-//	border-bottom:1px solid @body-bg;
-	margin-bottom:1px;
-
-
-	@media (max-width: @screen-sm-max) {
-//		flex-flow: column nowrap;
-	}
-
-	> .ro-bar {
-		display: flex;
-		flex: 0 0 auto;
-		background: transparent;
-		padding: 0;
-		flex-flow: row nowrap;
-		border-radius: @ro-border-radius @ro-border-radius 0 0;
-		align-items:stretch;
-
-		@media (max-width: @screen-sm-max) {
-			flex: 0 0 auto;
-		}
-
-		@media (max-width: @screen-xs-max) {
-//			background:@ro-bar-color;
-		}
-	}
-
-.ro-box {
-		display: flex;
-//		flex:1 1 0px;
-		flex:1 1 auto;
-		flex-flow: column nowrap;
-		align-items: stretch;
-		background:#fff;
-		margin:0 0 0 @ro-padding-sm;
-
-		position:relative;
-		&:before { .ro-arrow(right,10px,topleft,15px,-20px,@ro-bubble-bg); }
-
-
-		@media (max-width: @screen-sm-max) {
-//			flex:1 1 auto;
-//			margin-left:55px;
-//			border-radius:0 0 @ro-border-radius @ro-border-radius;
-//			&:before { display:none; }
-//			margin-left: 0;
-//			margin-top:15px;
-		}
-
-		@media (max-width: @screen-xs-max) {
-		}
-	}
-
-
-
-	&.ro-loading .ro-spinner {
+[component="post"].ro-loading .ro-spinner {
 		opacity:1;
 		animation: fa-spin 2s infinite linear;
-	}
 }
 
-
-
-
-
-
-
-[component="post"].ro-panel-post > .ro-box {
-	> .ro-drawer {
-		overflow:hidden;
-		border-radius:0 @ro-border-radius 0 0;
-
-		@media (max-width: @screen-sm-max) { border-radius:0; }
-
-
-		> .ro-vote-sm {
-			display: none;
-			text-align: center;
-			background:linear-gradient(#DBDEE1,@ro-bar-color);
-
-			@media (max-width: @screen-xs-max) {
-				display:flex;
-			}
-
-			> * {
-				flex-grow:1;
-				flex-basis:50%;
-				padding:10px 0;
-				margin:10px;
-			}
-
-			> .ro-upvote, > .ro-downvote {
-				cursor:pointer;
-				border-radius:@ro-border-radius;
-
-				> i {
-					color:#333; //@ro-vote-color;
-					font-size:16px;
-					margin-bottom:5px;
-				}
-
-				> span {
-					text-transform:uppercase;
-					font-weight:200;
-					color:#333;
-					font-size:13px;
-					display:block;
-				}
-
-				&:hover {
-					background:@ro-bar-bghover;
-				}
-			}
-
-			> .ro-upvote {
-				&.upvoted > i {
-					color:@brand-primary;
-				}
-
-				&:hover {
-					> i, > span {
-						color:green;
-					}
-				}
-			}
-
-			> .ro-downvote {
-				&.downvoted > i {
-					color:@brand-primary;
-				}
-
-				&:hover {
-					> i, > span {
-					color:red;
-					}
-				}
-			}
-		}
-	}
-
-
-
-
-}
 
 
 [component="post"].deleted {
 	opacity:0.3;
 }
 
-[component="post"].highlight {
+[component="post"].highlight > .bg-wrap {
 	background-color: #fffade;
 }
 
-[component="post"].bg-success {
+[component="post"].bg-success > .bg-wrap {
 	background-color:#e6fce3;
 
 	[component="user/picture"] {
@@ -652,38 +582,44 @@
 
 
 
-[component="topic"] {
-	> li:nth-of-type(1) {
-		border-top-left-radius:@ro-border-radius;
-		border-top-right-radius:@ro-border-radius;
-	}
-
-	> li:last-child	{
-		border-bottom-left-radius:@ro-border-radius;
-		border-bottom-right-radius:@ro-border-radius;
-	}
-}
-
-
-
-
 
 // =======================================
 
 
-.ro-topic-top {
-	display:flex;
-	flex-flow:row nowrap;
-	align-items:center;
-	overflow: hidden;
-	border-radius: inherit;
+.ro-post {
+	display: flex;
+	flex-flow:column nowrap;
+	align-items: stretch;
+	margin:0;
 
-	> :nth-child(1) {
-		flex:0 0 150px;
-		max-width:150px;
-		margin-right:10px;
-	}
-	> :nth-child(2) {
-		flex:1 1 auto;
+	padding-top:@ro-grid-spacing;
+	padding-bottom:@ro-grid-spacing;
+	&:nth-of-type(1) { padding-top: 0; }
+	&:nth-last-of-type(1) { padding-bottom:0; }
+
+	> .bg-wrap {
+		// background-color:#e8f0f7;
+		background-image: url(/plugins/nodebb-theme-reachout/static/card3.svg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		border-radius: @ro-border-radius;
+		flex:1 1 100%;
+		overflow:hidden;
+
+		> .ro-bar {
+			display: flex;
+			flex:0 1 auto;
+			flex-flow: row nowrap;
+			align-items:stretch;
+			padding:0;
+		}
+
+		> .ro-box {
+			display: flex;
+			flex:1 1 auto;
+			flex-flow: column nowrap;
+			align-items: stretch;
+			padding:0;
+		}
 	}
 }

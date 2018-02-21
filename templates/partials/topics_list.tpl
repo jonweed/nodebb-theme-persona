@@ -1,8 +1,8 @@
-<ul component="category" class="topic-list" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}" data-set="{set}">
+<ul component="category" class="topic-list lg-2cols-toggle" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}" data-set="{set}">
 	<meta itemprop="itemListOrder" content="descending">
 
 	<!-- BEGIN topics -->
-	<li component="category/topic" class="category-item ro-panel-category auto {function.generateTopicClass}" <!-- IMPORT partials/data/category.tpl -->>
+	<li component="category/topic" class="ro-panel category-item ro-panel-category auto {function.generateTopicClass}" <!-- IMPORT partials/data/category.tpl -->>
 		<meta itemprop="name" content="{function.stripTags, title}">
 		<div class="bg-wrap">
 			<div class="ro-bar">
