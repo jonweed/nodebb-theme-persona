@@ -8298,6 +8298,14 @@
        x2="1"
        y2="0"
        spreadMethod="pad" />
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Lightness-Contrast"
+       id="filter12267">
+      <feColorMatrix
+         values="1 0 0 -0.042328 -0 0 1 0 -0.042328 -0 0 0 1 -0.042328 -0 0 0 0 1 0"
+         id="feColorMatrix12265" />
+    </filter>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -8307,8 +8315,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.175"
-     inkscape:cx="622.56036"
-     inkscape:cy="515.71113"
+     inkscape:cx="1206.1493"
+     inkscape:cy="617.88527"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -8335,7 +8343,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -8345,19 +8353,19 @@
      id="layer1"
      transform="translate(-88.172698,-61.280399)">
     <rect
-       transform="matrix(0,0.35277777,-0.35277777,0,93.736734,338.95669)"
+       transform="matrix(0,0.35277777,-0.35277777,0,93.736741,338.95673)"
        y="-984.99976"
        x="-787.50006"
        height="999.99976"
        width="788.16718"
        id="rect2898-2-0"
-       style="fill:url(#linearGradient4579);fill-opacity:1;stroke:none;stroke-width:3.02202797;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:url(#linearGradient4579);fill-opacity:1;stroke:none;stroke-width:3.02202797;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter12267)"
        clip-path="url(#clipPath21033)" />
     <g
        clip-path="url(#clipPath20997)"
-       transform="matrix(0.75034216,0,0,-1.032319,63.088523,473.5658)"
+       transform="matrix(0.75034216,0,0,-1.032319,62.173713,472.93606)"
        id="g23205"
-       style="opacity:1">
+       style="opacity:0.8">
       <g
          id="g22599" />
       <g
