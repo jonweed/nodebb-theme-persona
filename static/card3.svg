@@ -26,8 +26,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7071068"
-     inkscape:cx="269.7194"
-     inkscape:cy="130.59962"
+     inkscape:cx="23.090224"
+     inkscape:cy="35.6248"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -43,8 +43,8 @@
     <inkscape:grid
        type="xygrid"
        id="grid3050"
-       originx="209.756"
-       originy="63.499994" />
+       originx="211.66653"
+       originy="38.371231" />
   </sodipodi:namedview>
   <defs
      id="defs36020">
@@ -10848,13 +10848,13 @@
     </rdf:RDF>
   </metadata>
   <g
-     transform="translate(196.04448,-129.42191)"
+     transform="translate(197.95534,-104.29316)"
      id="layer1"
      inkscape:groupmode="layer"
      inkscape:label="Layer 1">
     <g
        id="g2873"
-       transform="translate(-40.422811,-21.166671)">
+       transform="translate(-42.333677,-46.295422)">
       <g
          style="opacity:0.4"
          transform="translate(-298.50889,15.194192)"
