@@ -26,7 +26,7 @@
 						{../descriptionParsed}
 					</div>
 					<!-- ENDIF ../descriptionParsed -->
-				</div><!-- .ro-title --->
+				</div><!-- .ro-title -->
 
 				<div class="ro-stats">
 
@@ -52,7 +52,7 @@
 					<!-- ENDIF ../supportForum -->
 					<!-- ENDIF !../link -->
 
-				</div><!-- .ro-stats --->
+				</div><!-- .ro-stats -->
 
 			</div><!-- .ro-head -->
 
