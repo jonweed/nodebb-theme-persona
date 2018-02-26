@@ -614,10 +614,10 @@
 			top:0;
 			left:0;
 			border-radius:@ro-border-radius;
-			background-image: url(/plugins/nodebb-theme-reachout/static/card3.svg);
-			background-size: 100% 100%;
-			background-position: top;
-//			background-color: #D6E5F0;
+			background-image: url(/plugins/nodebb-theme-reachout/static/cardtop.svg),url(/plugins/nodebb-theme-reachout/static/cardleft.svg),url(/plugins/nodebb-theme-reachout/static/cardright.svg),url(/plugins/nodebb-theme-reachout/static/cardbottom.svg),url(/plugins/nodebb-theme-reachout/static/cardback.svg);
+			background-position: top,left,right,bottom,center;
+			background-size: 100% 190px,580px 100%, 580px 100%,100% 190px, cover;
+			background-repeat: no-repeat;
 			z-index: -1;
 			will-change: transform;
 			width:100%;
