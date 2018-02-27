@@ -30,16 +30,45 @@
 @import "reachout/categories.less";
 @import "reachout/breadcrumbs.less";
 
+.ro-round-center (@size) {
+	border-radius:50%;
+	height: @size;
+	width:@size;
+	line-height:@size;
+	text-align:center;
+	font-size:@size/2;
+}
+
+.ro-arrow(@border,@width,@position,@y,@x,@color: inherit) {
+	display: block;
+	content: ' ';
+	width: 0;
+	position: absolute;
+	border-style: solid;
+	border-width: @width;
+	border-color:transparent;
+
+	& when (@border = top) { border-top-color:@color; }
+	& when (@border = right) { border-right-color:@color; }
+	& when (@border = bottom) { border-bottom-color:@color; }
+	& when (@border = left) { border-left-color:@color; }
+
+	& when (@position = topleft) { top:@y; left:@x; }
+	& when (@position = topright) { top:@y; right:@x; }
+	& when (@position = bottomleft) { bottom:@y; left:@x; }
+	& when (@position = bottomright) { bottom:@y; right:@x; }
+}
+
 body {
 	&:before {
 		content: ' ';
 		position: fixed;
 		top:0;
 		left:0;
-		background-color: #6fb7e9;
 		background-image:url(/plugins/nodebb-theme-reachout/static/bg1.svg);
+		background-position: top;
 		background-size: cover;
-		background-position: center;
+		background-repeat: no-repeat;
 		z-index: -1;
 		will-change: transform;
 		width:100vw;
@@ -128,34 +157,7 @@ body {
 
 }
 
-.ro-round-center (@size) {
-	border-radius:50%;
-	height: @size;
-	width:@size;
-	line-height:@size;
-	text-align:center;
-	font-size:@size/2;
-}
 
-.ro-arrow(@border,@width,@position,@y,@x,@color: inherit) {
-	display: block;
-	content: ' ';
-	width: 0;
-	position: absolute;
-	border-style: solid;
-	border-width: @width;
-	border-color:transparent;
-
-	& when (@border = top) { border-top-color:@color; }
-	& when (@border = right) { border-right-color:@color; }
-	& when (@border = bottom) { border-bottom-color:@color; }
-	& when (@border = left) { border-left-color:@color; }
-
-	& when (@position = topleft) { top:@y; left:@x; }
-	& when (@position = topright) { top:@y; right:@x; }
-	& when (@position = bottomleft) { bottom:@y; left:@x; }
-	& when (@position = bottomright) { bottom:@y; right:@x; }
-}
 
 
 
@@ -246,7 +248,7 @@ body {
 	> .bg-wrap {
 		position: relative;
 		border-radius: @ro-border-radius;
-		flex:1 1 100%;
+		flex:1 1 auto;
 
 		&:before {
 			content: ' ';
