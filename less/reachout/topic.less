@@ -117,6 +117,7 @@
 		height: 40px;
 		line-height: 40px;
 		padding-left:@ro-padding;
+		background: #fff;
 
 		> *:nth-child(1) {
 			flex: 1 1 auto;
@@ -218,13 +219,7 @@
 		flex-flow: column;
 		flex: 1 1 auto;
 		padding:0;
-		margin:10px;
-		background: @ro-bubble-bg;
-		border-radius:0 @ro-border-radius @ro-border-radius 0;
-
-		position:relative;
-		&:before { .ro-arrow(right,10px,topleft,10px,-20px,@ro-bubble-bg); }
-
+		margin:0;
 
 //		@media (max-width: @screen-sm-max) {
 //		}
@@ -232,6 +227,11 @@
 		> [component="post/content"] {
 			flex: 1 0 auto;
 			padding:@ro-padding;
+			background: @ro-bubble-bg;
+
+//			position:relative;
+//			&:before { .ro-arrow(right,10px,topleft,10px,-20px,@ro-bubble-bg); }
+
 
 			> *:first-child { margin-top:0; padding-top:0; }
 			> *:last-child { margin-bottom:0; padding-bottom:0; }
@@ -275,6 +275,7 @@
 		display:inline-block;
 		font-size:12px;
 		padding: 5px 15px 15px 15px;
+		background:#fff;
 
 		.user-icon {
 			flex: 0 0 auto;
@@ -477,6 +478,13 @@
 		max-width: 150px;
 //		border-radius:@ro-border-radius 0 0 @ro-border-radius;
 
+	background-image: url(/plugins/nodebb-theme-reachout/static/bgblock.svg);
+	background-position: bottom left;
+	background-size: 100%;
+	background-repeat: no-repeat;
+
+
+
 
 		@media (max-width: @screen-sm-max) {
 //			flex-flow:row nowrap;
@@ -633,6 +641,8 @@
 			flex-flow: row nowrap;
 			align-items:stretch;
 			padding:0;
+			border-radius:@ro-border-radius;
+			overflow: hidden;
 
 			@media (max-width: @screen-sm-max) {
 				flex-flow:column nowrap;
@@ -645,8 +655,8 @@
 					padding:5px @ro-padding;
 				}
 				> .ro-body {
-					border-radius:0 0 @ro-border-radius @ro-border-radius;
-					&:before { display:none; }
+//					border-radius:0 0 @ro-border-radius @ro-border-radius;
+//					&:before { display:none; }
 				}
 			}
 		}
