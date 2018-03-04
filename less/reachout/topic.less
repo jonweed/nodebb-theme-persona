@@ -478,13 +478,9 @@
 		max-width: 150px;
 //		border-radius:@ro-border-radius 0 0 @ro-border-radius;
 
-	background-image: url(/plugins/nodebb-theme-reachout/static/bgblock.svg);
-	background-position: bottom left;
-	background-size: 150px 190px;
-	background-repeat: no-repeat;
 
 		@media (max-width: @screen-sm-max) {
-			background-size: 100px 50px;
+//			background-size: 100px 50px;
 
 		}
 
@@ -625,9 +621,10 @@
 			top:0;
 			left:0;
 			border-radius:@ro-border-radius;
-			background-image: url(/plugins/nodebb-theme-reachout/static/cardtop.svg),url(/plugins/nodebb-theme-reachout/static/cardbottom.svg),url(/plugins/nodebb-theme-reachout/static/cardback.svg);
-			background-position: top,bottom,center;
-			background-size: 100% 190px,100% 190px, cover;
+
+			background-image: url(/plugins/nodebb-theme-reachout/static/cardtop.svg),url(/plugins/nodebb-theme-reachout/static/cardbottom.svg),url(/plugins/nodebb-theme-reachout/static/cardback.svg),url(/plugins/nodebb-theme-reachout/static/bgblock0.svg);
+			background-position: top,bottom,center,top left;
+			background-size: 100% 190px,100% 190px, cover,cover;
 			background-repeat: no-repeat;
 			background-color: #D7E9F0;
 			z-index: -1;
