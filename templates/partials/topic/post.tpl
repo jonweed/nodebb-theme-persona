@@ -8,6 +8,21 @@
 			<!-- IMPORT partials/topic/post-head.tpl -->
 
 			<div class="ro-body">
+				<div class="ro-drawer">
+					<!-- IF !reputation:disabled -->
+					<div class="ro-vote-sm" style="display:none">
+						<div component="post/upvote" class="ro-upvote <!-- IF posts.upvoted -->upvoted<!-- ENDIF posts.upvoted -->">
+							<i class="fa fa-thumbs-up"></i><span>Upvote</span>
+						</div>
+						<!-- IF !downvote:disabled -->
+						<div component="post/downvote" class="ro-downvote <!-- IF posts.downvoted -->downvoted<!-- ENDIF posts.downvoted -->">
+							<i class="fa fa-thumbs-down"></i><span>Downvote</span>
+						</div>
+						<!-- ENDIF !downvote:disabled -->
+					</div>
+					<!-- ENDIF !reputation:disabled -->
+				</div><!-- .ro-drawer -->
+
 				<div class="ro-icons-block">
 					<div>
 						<a class="ro-permalink timeago" href="{config.relative_path}/post/{posts.pid}" title="{posts.timestampISO}"></a>
@@ -46,29 +61,9 @@
 						</div>
 						<!-- ENDIF !downvote:disabled -->
 					</div><!-- .ro-vote -->
-
-					<div class="ro-toggle-vote<!-- IF posts.upvoted --> upvoted<!-- ENDIF posts.upvoted --> <!-- IF posts.downvoted --> downvoted<!-- ENDIF posts.downvoted -->">
-				    <i class="fa fa-thumbs-up"></i>
-				    <span class="ro-votecount human-readable-number">{posts.votes}</span>
-				  </div>
 					<!-- ENDIF !reputation:disabled -->
 
 				</div><!-- .ro-icons-block -->
-
-				<div class="ro-drawer">
-					<!-- IF !reputation:disabled -->
-					<div class="ro-vote-sm" style="display:none">
-						<div component="post/upvote" class="ro-upvote <!-- IF posts.upvoted -->upvoted<!-- ENDIF posts.upvoted -->">
-							<i class="fa fa-thumbs-up"></i><span>Upvote</span>
-						</div>
-						<!-- IF !downvote:disabled -->
-						<div component="post/downvote" class="ro-downvote <!-- IF posts.downvoted -->downvoted<!-- ENDIF posts.downvoted -->">
-							<i class="fa fa-thumbs-down"></i><span>Downvote</span>
-						</div>
-						<!-- ENDIF !downvote:disabled -->
-					</div>
-					<!-- ENDIF !reputation:disabled -->
-				</div><!-- .ro-drawer -->
 
 				<div component="post/content" itemprop="text">
 					{posts.content}
