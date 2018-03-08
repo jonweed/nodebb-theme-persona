@@ -8,6 +8,12 @@
 	}
 }
 
+.panel-primary {
+	position:fixed;
+	bottom:0;
+	right:0;
+}
+
 .topic .pagination-block {
 	position: fixed;
 	width: 100%;
@@ -38,6 +44,22 @@
 // TOPIC STYLES
 //
 .topic {
+
+	[component="post/tools"] > a {
+		color:#777;
+	}
+
+	.ro-author {
+		text-align: center;
+		margin-top:10px;
+		@media (max-width: @screen-sm-max) { text-align:left; margin-top:0; }
+	}
+
+	.ro-username {
+		text-shadow: 0 1px 2px #c2c3c7;
+		display:block;
+	}
+
 
 	.ro-drawer {
 		overflow:hidden;
@@ -119,6 +141,10 @@
 		padding-left:@ro-padding;
 		background: #fff;
 
+		@media (max-width: @screen-sm-max) {
+			padding-left:@ro-padding-sm;
+		}
+
 		> *:nth-child(1) {
 			flex: 1 1 auto;
 		}
@@ -165,7 +191,7 @@
 			display: inline-block;
 			vertical-align: 0;
 			white-space: pre-wrap;
-			font-size:80%;
+			font-size:75%;
 			font-weight: 300;
 			color: #444;
 			text-transform: uppercase;
@@ -202,6 +228,7 @@
 			font-size: 13px;
 			font-weight: 400;
 			min-width:10px;
+			color:@brand-primary;
 		}
 
 		&:hover {
@@ -221,22 +248,14 @@
 		padding:0;
 		margin:0;
 
-//		@media (max-width: @screen-sm-max) {
-//		}
-
 		> [component="post/content"] {
 			flex: 1 0 auto;
 			padding:@ro-padding;
 			background: @ro-bubble-bg;
 
-			@media (max-width: @screen-xs-max) {
+			@media (max-width: @screen-sm-max) {
 				padding:@ro-padding-sm;
 			}
-
-
-//			position:relative;
-//			&:before { .ro-arrow(right,10px,topleft,10px,-20px,@ro-bubble-bg); }
-
 
 			> *:first-child { margin-top:0; padding-top:0; }
 			> *:last-child { margin-bottom:0; padding-bottom:0; }
@@ -267,13 +286,17 @@
 		align-items:center;
 
 		> a, > span > a {
-			padding:5px 10px;
+			padding:3px 12px;
 		}
-	}
 
-	.ro-replies {
-			margin-left:160px;
-			@media (max-width: @screen-sm-max) { margin-left:0; }
+		> a {
+			border:1px solid #E2EFF4;
+			font-size:13px;
+			text-transform: lowercase;
+			border-radius:@ro-border-radius;
+			&:first-of-type { border-right-width: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; }
+			&:last-of-type { border-top-left-radius: 0; border-bottom-left-radius: 0; }
+		}
 	}
 
 	[component="post/reply-count"] {
@@ -291,9 +314,6 @@
 			font-size:9px;
 			border-radius: 50%;
 		}
-	}
-
-	[component="post/replies"] {
 	}
 
 	.replies-last {
@@ -349,6 +369,7 @@
 			min-width:10px;
 			height: 40px;
 			line-height: 40px;
+			color:#005fd5;
 		}
 	}
 
@@ -356,8 +377,7 @@
 		display:none;
 		@media (max-width: @screen-sm-max) {
 			display:flex;
-			flex: 1 1 auto;
-			justify-content: flex-end;
+			margin-left:auto;
 		}
 		@media (max-width: @screen-xs-max) { display:none; }
 	}
@@ -366,16 +386,12 @@
 		flex: 0 0 40px;
 		position: relative;
 
-//		&:before { .ro-arrow(right,10px,topright,50%,-15px,@ro-bar-color); margin-top:-10px; }
-
 		@media (max-width: @screen-sm-max) {
 			flex:0 0 51px;
 		}
 
 		@media (max-width: @screen-xs-max) {
 				flex:0 0 45px;
-//			margin:0 15px;
-//			&:before { display:none; }
 		}
 
 		> .ro-selected {
@@ -391,7 +407,6 @@
 			line-height: 50px;
 			font-size: 25px;
 			border: 1px solid #5cb85c;
-//			background: #fff;
 			color: #5cb85c;
 
 			@media (max-width: @screen-sm-max) {
@@ -439,24 +454,12 @@
 			}
 
 			@media (max-width: @screen-sm-max) {
-				width: 36px;
-				height: 36px;
-				line-height: 36px;
-				font-size: 18px;
-				> i {
-					width: 12px;
-					height: 12px;
-				}
-			}
-
-			@media (max-width: @screen-xs-max) {
-				width: 30px;
-				height: 30px;
-				line-height: 30px;
-				font-size: 15px;
+				width: 32px;
+				height: 32px;
+				line-height: 32px;
+				font-size: 16px;
 
 				> i {
-//					border-color: @ro-bar-color;
 					width: 11px;
 					height: 11px;
 				}
@@ -488,31 +491,17 @@
 		flex-flow: column nowrap;
 		align-items: center;
 		flex: 0 0 150px;
-		border-radius: 0;
 		padding: @ro-padding;
 		max-width: 150px;
-//		border-radius:@ro-border-radius 0 0 @ro-border-radius;
+		border-radius:@ro-border-radius 0 0 @ro-border-radius;
+		border-radius: 0.25rem 0 0 0.25rem;
 
 		@media (max-width: @screen-sm-max) {
 			flex-flow:row nowrap;
 			flex:1 1 auto;
 			max-width:none;
 			border-radius:@ro-border-radius @ro-border-radius 0 0;
-			padding:5px @ro-padding;
-		}
-
-		@media (max-width: @screen-xs-max) {
 			padding:5px @ro-padding-sm;
-		}
-
-		@media (max-width: @screen-sm-max) {
-//			flex-flow:row nowrap;
-//			padding:0;
-//			border-radius:@ro-border-radius @ro-border-radius 0 0;
-		}
-
-		@media (max-width: @screen-xs-max) {
-//			background:transparent;
 		}
 
 		> .ro-block {
@@ -527,30 +516,7 @@
 				flex-flow:column nowrap;
 				align-items:center;
 			}
-
-			> .ro-username {
-				font-weight: 500;
-				text-shadow: 0 1px 2px #c2c3c7;
-			}
-
-
-
-			@media (max-width: @screen-sm-max) {
-//				flex-flow: row wrap;
-//				flex: 1 1 auto;
-//				margin: 0;
-	//				padding: @ro-padding-sm 0 5px @ro-padding-sm;
-//				align-items:center;
-
-				> * {
-//					margin:0 @ro-padding-sm 5px 0;
-				}
-			}
 		}
-
-
-
-
 	}
 
 
@@ -583,8 +549,6 @@
 		opacity:1;
 		animation: fa-spin 2s infinite linear;
 }
-
-
 
 [component="post"].deleted {
 	opacity:0.3;
@@ -641,16 +605,11 @@
 			top:0;
 			left:0;
 			border-radius:@ro-border-radius;
-//			background-image: url(/plugins/nodebb-theme-reachout/static/cardtop.svg),url(/plugins/nodebb-theme-reachout/static/cardbottom.svg),url(/plugins/nodebb-theme-reachout/static/cardback.svg),url(/plugins/nodebb-theme-reachout/static/bgblock.svg);
-//			background-position: top,bottom,center,top;
-//			background-size: 100% 190px,100% 190px, 100% 190px,cover;
-
-background-image: url(/plugins/nodebb-theme-reachout/static/cardtop.svg),url(/plugins/nodebb-theme-reachout/static/cardbottom.svg),url(/plugins/nodebb-theme-reachout/static/cardback.svg);
-background-position: top,bottom,top;
-background-size: 100% 190px,100% 190px,cover;
-background-repeat: no-repeat;
-background-color: #D7E9F0;
-
+			background-image: url(/plugins/nodebb-theme-reachout/static/cardtop.svg),url(/plugins/nodebb-theme-reachout/static/cardbottom.svg),url(/plugins/nodebb-theme-reachout/static/cardback.svg);
+			background-position: top,bottom,top;
+			background-size: 100% 190px,100% 190px,cover;
+			background-repeat: no-repeat;
+			background-color: #D7E9F0;
 			z-index: -1;
 			width:100%;
 			height:100%;
@@ -665,11 +624,9 @@ background-color: #D7E9F0;
 			align-items:stretch;
 			padding:0;
 			border-radius:@ro-border-radius;
-			overflow: hidden;
 
 			@media (max-width: @screen-sm-max) {
 				flex-flow:column nowrap;
-				.ro-group-label { margin-left:auto; }
 			}
 		}
 

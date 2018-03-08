@@ -12,14 +12,16 @@
     </a>
   </div><!-- component="user/picture" -->
 
-  <a class="ro-username" href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->" itemprop="author" data-username="{posts.user.username}" data-uid="{posts.user.uid}">
-    {posts.user.username}
-    <!-- IF posts.user.banned -->
-    <span class="label label-danger">[[user:banned]]</span>
-    <!-- ENDIF posts.user.banned -->
-  </a><!-- .ro-username -->
+  <div class="ro-author">
+    <a class="ro-username" href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->" itemprop="author" data-username="{posts.user.username}" data-uid="{posts.user.uid}">
+      {posts.user.username}
+      <!-- IF posts.user.banned -->
+      <span class="label label-danger">[[user:banned]]</span>
+      <!-- ENDIF posts.user.banned -->
+    </a><!-- .ro-username -->
 
-  <!-- IMPORT partials/topic/badge.tpl -->
+    <!-- IMPORT partials/topic/badge.tpl -->
+  </div>
 
   <!-- IF supportForum -->
   <div class="ro-private">
@@ -44,7 +46,7 @@
   <div class="ro-toggle-vote<!-- IF posts.upvoted --> upvoted<!-- ENDIF posts.upvoted --> <!-- IF posts.downvoted --> downvoted<!-- ENDIF posts.downvoted -->">
     <i class="fa fa-thumbs-up"></i>
     <span class="ro-votecount human-readable-number">{posts.votes}</span>
-  </div>  
+  </div>
   <!-- ENDIF !reputation:disabled -->
 
 </div><!-- .ro-head -->
