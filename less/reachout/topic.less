@@ -143,7 +143,6 @@
 		height: 40px;
 		line-height: 40px;
 		padding-left:@ro-padding;
-		background: #fff;
 
 		@media (max-width: @screen-sm-max) {
 			padding-left:@ro-padding-sm;
@@ -251,12 +250,17 @@
 		flex: 1 1 auto;
 		padding:0;
 		margin:0;
+		background: #fff;
+		border-radius:0 @ro-border-radius @ro-border-radius 0;
+		@media (max-width: @screen-sm-max) {
+			border-top-right-radius:0;
+			border-bottom-left-radius:@ro-border-radius;
+		}
+
 
 		> [component="post/content"] {
 			flex: 1 0 auto;
 			padding:@ro-padding;
-			background: @ro-bubble-bg;
-
 			@media (max-width: @screen-sm-max) {
 				padding:@ro-padding-sm;
 			}
@@ -293,6 +297,11 @@
 			padding:3px 12px;
 		}
 
+		> span > a {
+			margin-right: -15px;
+			@media (max-width: @screen-sm-max) { margin-right:-10px; }
+		}
+
 		> a {
 			border:1px solid #E2EFF4;
 			font-size:13px;
@@ -303,11 +312,29 @@
 		}
 	}
 
+	.ro-replies {
+		margin-left:150px;
+		@media (max-width: @screen-sm-max) { margin-left:0px; }
+
+		.ro-body { border-bottom-left-radius: 0; }
+		.bg-wrap:before { border-top-left-radius: 0; border-bottom-left-radius: 0; }
+	}
+
+[component="post/replies"] {
+	padding-top:15px;
+	border-left:5px solid #c1d0d6;
+	margin-bottom:25px;
+	margin-left:16px;
+}
+
 	[component="post/reply-count"] {
 		display:inline-block;
 		font-size:12px;
-		padding: 5px 15px 15px 15px;
+		padding: 5px 10px;
 		background:#fff;
+		margin-top: 4px;
+//		background: rgba(255,255,255,.4);
+		border-radius: @ro-border-radius;
 
 		.user-icon {
 			flex: 0 0 auto;
@@ -368,12 +395,12 @@
 
 		> .ro-votecount {
 			font-size: 13px;
-			font-weight: 500;
+			font-weight: 400;
 			margin: 0 10px;
 			min-width:10px;
 			height: 40px;
 			line-height: 40px;
-			color:#005fd5;
+			color:#333;
 		}
 	}
 
