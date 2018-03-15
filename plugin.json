@@ -17,7 +17,8 @@
 		"lib/persona.js",
 		"lib/modules/nprogress.js",
 		"lib/modules/autohidingnavbar.min.js",
-		"lib/modules/quickreply.js"
+		"lib/modules/quickreply.js",
+		"lib/modules/slide.js"
 	],
 	"staticDirs": {
 		"static": "./static"

@@ -97,6 +97,7 @@
 						<i class="fa fa-fw fa-spin fa-spinner hidden" component="post/replies/loading"></i>
 						<span class="replies-last hidden-xs">[[topic:last_reply_time]] <span class="timeago" title="{posts.replies.timestampISO}"></span></span>
 					</a>
+					<div class="toggle-replies"></div><!-- .toggle-replies -->
 				<!-- ENDIF !hideReplies -->
 
 				<i class="fa fa-fw fa-spinner ro-spinner"></i>
