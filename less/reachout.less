@@ -60,12 +60,19 @@
 }
 
 body {
-	background-image:url(/plugins/nodebb-theme-reachout/static/bg1.svg);
-  background-position: top left;
-  background-size: cover;
-  background-repeat: no-repeat;
-	will-change: scroll-position;
-	background-attachment: fixed;
+	&:before {
+	  content: ' ';
+	  position: fixed;
+	  top:0;
+	  left:0;
+	  background-image:url(/plugins/nodebb-theme-reachout/static/bg1.svg);
+	  background-position: top center;
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	  transform: rotateZ(360deg);
+	  width:100vw;
+	  height:100vh;
+	}
 }
 
 .posts-list .posts-list-item .post-body {

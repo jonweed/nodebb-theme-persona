@@ -105,9 +105,6 @@
 			</div><!-- .ro-body -->
 
 		</div><!-- .ro-bar -->
-		<div class="ro-box">
-		</div><!-- .ro-box -->
-
 	</div><!-- .bg-wrap -->
 
 
