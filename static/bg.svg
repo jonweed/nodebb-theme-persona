@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="149.20859mm"
+   height="95.308731mm"
+   viewBox="0 0 149.20859 95.308731"
+   version="1.1"
+   id="svg4876"
+   inkscape:version="0.92.1 r15371"
+   sodipodi:docname="bg.svg">
+  <defs
+     id="defs4870">
+    <linearGradient
+       gradientTransform="matrix(-0.26458333,0,0,0.26458333,88.86917,-117.59244)"
+       y2="379.78397"
+       x2="293.98517"
+       y1="735.64551"
+       x1="295.8833"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient5453">
+      <stop
+         offset="0"
+         style="stop-color:#bbf3fa;stop-opacity:0.56862748"
+         id="stop5449" />
+      <stop
+         id="stop5451"
+         style="stop-color:#a0eef9;stop-opacity:1"
+         offset="1" />
+    </linearGradient>
+    <linearGradient
+       id="SVGID_2_"
+       gradientUnits="userSpaceOnUse"
+       x1="293.86301"
+       y1="725.54401"
+       x2="293.98517"
+       y2="379.78397"
+       gradientTransform="matrix(-0.26458333,0,0,0.26458333,111.80059,51.932417)">
+      <stop
+         offset="0"
+         style="stop-color:#E5DFC6"
+         id="stop15" />
+      <stop
+         offset="0.14726722"
+         style="stop-color:#EDE8D6"
+         id="stop17" />
+      <stop
+         offset="0.15248911"
+         style="stop-color:#86ebf5;stop-opacity:0.158"
+         id="stop25" />
+      <stop
+         id="stop4853"
+         style="stop-color:#bbf3fa;stop-opacity:0.56862748"
+         offset="0.27062955" />
+      <stop
+         offset="1"
+         style="stop-color:#a0eef9;stop-opacity:1"
+         id="stop41" />
+    </linearGradient>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Lightness-Contrast"
+       id="filter5509">
+      <feColorMatrix
+         values="1 0 0 -0.0688 -0 0 1 0 -0.0688 -0 0 0 1 -0.0688 -0 0 0 0 1 0"
+         id="feColorMatrix5507"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix5519" />
+      <feColorMatrix
+         id="feColorMatrix5521"
+         values="1 0 0 -0.0212 -0 0 1 0 -0.0212 -0 0 0 1 -0.0212 -0 0 0 0 1 0"
+         in="fbSourceGraphic" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="330.49541"
+     inkscape:cy="363.87209"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1360"
+     inkscape:window-height="737"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4873">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(41.089508,-151.26335)">
+    <rect
+       x="-41.089508"
+       y="151.26335"
+       width="149.20859"
+       height="95.308731"
+       id="rect5439"
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0.26458332" />
+    <rect
+       style="fill:url(#SVGID_2_);stroke-width:0.26458332;filter:url(#filter5509)"
+       id="rect50"
+       height="95.308731"
+       width="149.20859"
+       y="151.26335"
+       x="-41.089508" />
+  </g>
+</svg>

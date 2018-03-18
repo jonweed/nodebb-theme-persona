@@ -1,5 +1,5 @@
 {
-	"id": "nodebb-theme-persona",
+	"id": "nodebb-theme-reachout",
 	"library": "library.js",
 	"hooks": [
 		{ "hook": "filter:teasers.get", "method": "getTeasers" },
@@ -8,14 +8,21 @@
 		{ "hook": "static:app.load", "method": "init" },
 		{ "hook": "filter:admin.header.build", "method": "addAdminNavigation" },
 		{ "hook": "filter:topic.build", "method": "addUserToTopic" },
-		{ "hook": "filter:meta.getLinkTags", "method": "getLinkTags"}
+		{ "hook": "filter:category.build", "method": "addRepliesToTopic" },
+		{ "hook": "filter:topics.addPostData", "method": "addPostData" },
+		{ "hook": "filter:users.get", "method": "addUserData" },
+		{ "hook": "filter:meta.getLinkTags", "method": "getLinkTags" }
 	],
 	"scripts": [
 		"lib/persona.js",
 		"lib/modules/nprogress.js",
 		"lib/modules/autohidingnavbar.min.js",
-		"lib/modules/quickreply.js"
+		"lib/modules/quickreply.js",
+		"lib/modules/slide.js"
 	],
+	"staticDirs": {
+		"static": "./static"
+	},
 	"modules": {
 		"pulling.js": "node_modules/pulling/build/pulling-drawer.js"
 	},

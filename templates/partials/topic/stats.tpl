@@ -1,8 +1,8 @@
 <div class="stats hidden-xs">
-	<span component="topic/post-count" class="human-readable-number" title="{postcount}">{postcount}</span><br />
+	<span component="topic/post-count" class="human-readable-number" title="{postcount}">{postcount}</span>
 	<small>[[global:posts]]</small>
 </div>
 <div class="stats hidden-xs">
-	<span class="human-readable-number" title="{viewcount}">{viewcount}</span><br />
+	<span class="human-readable-number" title="{viewcount}">{viewcount}</span>
 	<small>[[global:views]]</small>
 </div>

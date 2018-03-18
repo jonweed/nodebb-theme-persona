@@ -1,0 +1,378 @@
+//
+// PANEL CATEGORY/TOPIC
+//
+
+.category > ul { margin-top:20px; }
+.category > hr { margin-top:0; margin-bottom:15px; }
+
+.category > ul > li {
+	border:none;
+}
+
+[component="category/topic"] {
+	transform:rotateZ(360deg);
+}
+
+
+[component="category/topic"].ro-panel-category {
+	display: flex;
+	flex-flow:column nowrap;
+	align-items: stretch;
+	transition:none;
+
+	@media (max-width: @screen-sm-max) {
+		align-items: stretch;
+	}
+
+	@media (max-width: @screen-sm-max) {
+		flex-flow:column nowrap;
+	}
+}
+
+
+
+[component="category/topic"].ro-panel-category > .bg-wrap > .ro-bar {
+	.ro-icon {
+		flex:0 0 auto;
+		display:block;
+		margin: 0 @ro-padding 0 0;
+		position: relative;
+
+		> .ro-user-icon {
+			.ro-round-center(36px);
+			display:block;
+			color: #fff;
+			box-shadow:0 1px 3px 0 #92989c;
+
+			@media (max-width: @screen-sm-max) {
+			}
+
+			@media (max-width: @screen-xs-max) {
+			}
+		}
+
+		&:before {
+			display:none;
+//			.ro-arrow(right,10px,topright,50%,-15px,#fff);
+//			margin-top:-10px;
+		}
+	}
+
+	> .ro-head {
+		display: flex;
+		flex:1 1 0px;
+		flex-flow:column nowrap;
+		align-items:stretch;
+//		margin-bottom:15px;
+		border-radius:@ro-border-radius;
+//		padding: @ro-padding 10px 0 @ro-padding;
+
+
+		> .ro-splitblock {
+			display:flex;
+			flex-flow:row nowrap;
+			align-items:center;
+
+			> * {
+				margin:0 @ro-padding 0 0;
+			}
+
+			.ro-stats { margin: 0;
+
+				> .stats {
+					display:flex;
+					flex-flow:column nowrap;
+					flex:0 0 auto;
+					text-align:center;
+
+					> span {
+					}
+
+					> small {
+						text-transform: uppercase;
+						color: #777;
+					}
+				}
+
+
+			}
+
+
+			> *:first-child {
+				flex:1 1 auto;
+			}
+
+			> *:last-child {
+				flex:0 0 auto;
+			}
+		}
+
+		.ro-posted-by { font-weight:300; }
+
+		.ro-stats {
+			display:flex;
+			flex:0 0 auto;
+			flex-flow:row nowrap;
+			justify-content:flex-start;
+
+			> * {
+				margin:0;
+			}
+
+			> .stats {
+				display:flex;
+				flex-flow:column nowrap;
+				flex:0 0 auto;
+				font-size:14px;
+				line-height:16px;
+
+				> * { display:inline-block; }
+
+				> span {
+//					margin-right:4px;
+				}
+
+				@media (max-width: @screen-sm-max) {
+					&.views,  &.votes { display:none; }
+				}
+			}
+		}
+
+
+		> .ro-splitblock > .ro-title {
+//			display:flex;
+//			flex:1 1 auto;
+//			flex-flow:column nowrap;
+//			padding: 0 @ro-padding;
+
+			> div > a { font-size:16px; }
+
+			> .ro-category-link {
+				font-weight:300;
+			}
+
+			@media (max-width: @screen-xs-max) {
+			}
+
+
+			@media (max-width: @screen-xs-max) {
+			}
+
+
+//			> * { margin:0 @ro-padding @ro-padding 0; }
+
+			> .tag-list { font-weight: 300; }
+		}
+
+		@media (max-width: @screen-xs-max) {
+
+		}
+
+		@media (max-width: 360px) {
+			flex-flow:column nowrap;
+		}
+
+
+	}
+}
+
+
+
+[component="category/topic"].ro-panel-category > .bg-wrap > .ro-box {
+
+	> .ro-teaser.no-reply {
+		display :none;
+	}
+
+	.ro-icon {
+		margin: 0 @ro-padding 0 0;
+		position:relative;
+
+//		@media (max-width: @screen-sm-max) { margin:@ro-padding-sm 15px 0 0; }
+
+		&:before {
+	//				.ro-arrow(right,10px,topright,50%,-23px,@ro-bubble-bg);
+//					margin-top:-10px;
+		}
+
+		> .ro-user-icon {
+			.ro-round-center(20px);
+			display:inline-block;
+			color: #fff;
+		}
+	}
+
+	> .ro-block {
+		display:flex;
+		flex-flow:column nowrap;
+		background:@ro-bubble-bg;
+		border-radius: @ro-border-radius;
+		flex:1 1 auto;
+
+
+		> .ro-toggle-btn {
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: stretch;
+			flex: 1  1 auto;
+			justify-content: flex-start;
+
+			position:relative;
+			&:before {.ro-arrow(bottom,15px,topleft,-25px,55px,@ro-bubble-bg); }
+
+
+			> .ro-permalink {
+				margin:@ro-padding-sm 0 @ro-padding-sm @ro-padding;
+				font-size:85%;
+				font-weight:300;
+			}
+
+			> .toggle {
+				text-align:right;
+				padding:@ro-padding-sm @ro-padding;
+				flex:1 0 auto;
+
+				> span {
+					display:inline-block;
+					color: #1976d2;
+					padding-right: 4px;
+					font-size: 80%;
+					text-transform: uppercase;
+					cursor:pointer;
+
+					&:last-child { display:none; }
+				}
+
+				&:after {
+					font: normal normal normal 14px/1 FontAwesome;
+					content: "\f107";
+					font-size: 16px;
+					color: #1976d2;
+					cursor:pointer;
+				}
+
+				&.open {
+					&:after {
+						content: "\f106";
+					}
+
+					> span {
+						display:none;
+						&:last-child { display: inline-block; }
+					}
+				}
+			}
+
+			@media (min-width: @screen-md) {
+				> .toggle { display:none; }
+			}
+		}
+
+		> .ro-teaser {
+			line-height:normal;
+			flex: 1 1 auto;
+			position:relative;
+			display:none;
+			overflow:hidden;
+
+			> * {
+				margin: 0;
+				padding: 0;
+			}
+
+			> .post-content {
+				padding: 0 @ro-padding @ro-padding @ro-padding;
+				font-size:85%;
+			}
+
+			@media (max-width: @screen-sm-max) {
+	//			border-radius:0 0 @ro-border-radius @ro-border-radius;
+			}
+
+			@media (min-width: @screen-md) {
+				display:block !important;
+			}
+		}
+	}
+
+}
+
+
+
+//
+// SELECT
+//
+[component="category/topic"].ro-panel-category {
+	.select {
+		.fa-check {
+			.ro-round-center(36px);
+			position: absolute;
+			top: 0;
+			left: 0;
+			padding:0;
+			opacity: 0;
+			border: 1px solid #1976d2;
+			color: #1976d2;
+			background:#fff;
+
+			@media (max-width: @screen-sm-max) {
+			}
+
+			@media (max-width: @screen-xs-max) {
+			}
+		}
+
+		.fa-check, .ro-user-icon {
+			transition: none;
+		}
+
+		&:hover .fa-check {
+			opacity:1;
+		}
+	}
+}
+
+
+
+//
+// SELECTED
+//
+[component="category/topic"].ro-panel-category.selected > .bg-wrap {
+	background: #e6fce3;
+
+	> .ro-bar {
+		> .ro-head {
+//			background: #e6fce3;
+//			.tag { background:#d0e5cf; }
+		}
+	}
+
+	> .ro-box {
+		> .ro-icon:before { border-right-color:#dbf0d8; }
+
+		> .ro-block {
+			background:#dbf0d8;
+			.ro-toggle-btn:before { border-bottom-color:#dbf0d8; }
+//			&:before { border-right-color:#dbf0d8; }
+			@media (max-width: @screen-sm-max) {
+				&:before {
+//					border-right-color:transparent;
+//					border-bottom-color:#dbf0d8;
+				}
+			}
+		}
+	}
+
+	.select {
+		.ro-user-icon {
+			opacity:0;
+		}
+
+		.fa-check {
+			opacity: 1;
+			border:1px solid #5cb85c;
+			background:#fff;
+			color: #5cb85c;
+		}
+	}
+}

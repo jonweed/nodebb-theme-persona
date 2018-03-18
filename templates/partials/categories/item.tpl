@@ -1,46 +1,69 @@
-<li component="categories/category" data-cid="{../cid}" data-numRecentReplies="1" class="row clearfix">
+<li component="categories/category" data-cid="{../cid}" data-numRecentReplies="{../numRecentReplies}" class="ro-panel ro-panel-category-item auto">
 	<meta itemprop="name" content="{../name}">
+	<div class="bg-wrap">
+		<div class="ro-bar">
 
-	<div class="content col-xs-12 <!-- IF config.hideCategoryLastPost -->col-md-10 col-sm-12<!-- ELSE -->col-md-7 col-sm-9<!-- ENDIF config.hideCategoryLastPost -->">
-		<div class="icon pull-left" style="{function.generateCategoryBackground}">
-			<i class="fa fa-fw {../icon}"></i>
-		</div>
-
-		<h2 class="title">
-			<!-- IMPORT partials/categories/link.tpl -->
-		</h2>
-		<div>
-			<!-- IF ../descriptionParsed -->
-			<div class="description">
-				{../descriptionParsed}
+			<div class="ro-icon" style="{function.generateCategoryBackground}">
+				<i class="fa fa-fw {../icon}"></i>
 			</div>
-			<!-- ENDIF ../descriptionParsed -->
-			<!-- IF !config.hideSubCategories -->
-			{function.generateChildrenCategories}
-			<!-- ENDIF !config.hideSubCategories -->
-		</div>
-		<span class="visible-xs pull-right">
-			<!-- IF ../teaser.timestampISO -->
-			<a class="permalink" href="{../teaser.url}">
-				<small class="timeago" title="{../teaser.timestampISO}"></small>
-			</a>
-			<!-- ENDIF ../teaser.timestampISO -->
-		</span>
-	</div>
 
-	<!-- IF !../link -->
-	<div class="col-md-1 hidden-sm hidden-xs stats">
-		<span class="{../unread-class} human-readable-number" title="{../totalTopicCount}">{../totalTopicCount}</span><br />
-		<small>[[global:topics]]</small>
-	</div>
-	<div class="col-md-1 hidden-sm hidden-xs stats">
-		<span class="{../unread-class} human-readable-number" title="{../totalPostCount}">{../totalPostCount}</span><br />
-		<small>[[global:posts]]</small>
-	</div>
-	<!-- IF !config.hideCategoryLastPost -->
-	<div class="col-md-3 col-sm-3 teaser hidden-xs" component="topic/teaser">
-		<!-- IMPORT partials/categories/lastpost.tpl -->
-	</div>
-	<!-- ENDIF !config.hideCategoryLastPost -->
-	<!-- ENDIF !../link -->
-</li>
+			<div class="ro-head">
+
+				<div class="ro-title">
+					<h2>
+						<!-- IMPORT partials/categories/link.tpl -->
+					</h2>
+
+					<!-- IF ../supportForum -->
+					<div class="ro-private">
+						<i class="fa fa-user-secret"></i>
+						<span>Private</span>
+					</div>
+					<!-- ENDIF ../supportForum -->
+
+					<!-- IF ../descriptionParsed -->
+					<div class="ro-description">
+						{../descriptionParsed}
+					</div>
+					<!-- ENDIF ../descriptionParsed -->
+				</div><!-- .ro-title -->
+
+				<div class="ro-stats">
+
+					<!-- IF !../link -->
+					<!-- IF ../supportForum -->
+
+					<div class="stats" component="category/topic-count">
+						<span class="{../unread-class} human-readable-number" title="{../supportForum:stats.topicCount}">{../supportForum:stats.topicCount}</span><small>[[global:topics]]</small>
+					</div>
+					<div class="stats" component="category/post-count">
+						<span class="{../unread-class} human-readable-number" title="{../supportForum:stats.postCount}">{../supportForum:stats.postCount}</span><small>[[global:posts]]</small>
+					</div>
+
+					<!-- ELSE -->
+
+					<div class="stats" component="category/topic-count">
+						<span class="{../unread-class} human-readable-number" title="{../totalTopicCount}">{../totalTopicCount}</span><small>[[global:topics]]</small>
+					</div>
+					<div class="stats" component="category/post-count">
+						<span class="{../unread-class} human-readable-number" title="{../totalPostCount}">{../totalPostCount}</span><small>[[global:posts]]</small>
+					</div>
+
+					<!-- ENDIF ../supportForum -->
+					<!-- ENDIF !../link -->
+
+				</div><!-- .ro-stats -->
+
+			</div><!-- .ro-head -->
+
+		</div><!-- .ro-bar -->
+
+		<div class="ro-box" style="border-color: {../bgColor}" component="topic/teaser">
+
+			<!-- IF !config.hideCategoryLastPost -->
+			<!-- IMPORT partials/categories/lastpost.tpl -->
+			<!-- ENDIF !config.hideCategoryLastPost -->
+
+		</div><!-- .ro-box -->
+	</div><!-- .bg-wrap -->
+</li><!-- .ro-panel -->

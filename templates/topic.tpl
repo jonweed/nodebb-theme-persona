@@ -17,18 +17,6 @@
 			<span class="topic-title" component="topic/title">{title}</span>
 		</h1>
 
-		<!-- IF merger -->
-		<div component="topic/merged/message" class="alert alert-warning clearfix">
-			<span class="pull-left">[[topic:merged_message, {mergeIntoTid}, {merger.mergedIntoTitle}]]</span>
-			<span class="pull-right">
-				<a href="{config.relative_path}/user/{merger.userslug}">
-					<strong>{merger.username}</strong>
-				</a>
-				<small class="timeago" title="{mergedTimestampISO}"></small>
-			</span>
-		</div>
-		<!-- ENDIF merger -->
-
 		<div component="topic/deleted/message" class="alert alert-warning<!-- IF !deleted --> hidden<!-- ENDIF !deleted --> clearfix">
 			<span class="pull-left">[[topic:deleted_message]]</span>
 			<span class="pull-right">
@@ -41,21 +29,12 @@
 			</span>
 		</div>
 
-		<hr class="visible-xs" />
-
 		<ul component="topic" class="posts" data-tid="{tid}" data-cid="{cid}">
 			<!-- BEGIN posts -->
-				<li component="post" class="<!-- IF posts.deleted -->deleted<!-- ENDIF posts.deleted -->" <!-- IMPORT partials/data/topic.tpl -->>
-					<a component="post/anchor" data-index="{posts.index}" id="{posts.index}"></a>
-
-					<meta itemprop="datePublished" content="{posts.timestampISO}">
-					<meta itemprop="dateModified" content="{posts.editedISO}">
-
-					<!-- IMPORT partials/topic/post.tpl -->
-					<!-- IF !posts.index -->
-					<div class="post-bar-placeholder"></div>
-					<!-- ENDIF !posts.index -->
-				</li>
+			<!-- IF !posts.index -->
+			<div class="post-bar-placeholder"></div>
+			<!-- ENDIF !posts.index -->
+			<!-- IMPORT partials/topic/post.tpl -->
 			<!-- END posts -->
 		</ul>
 

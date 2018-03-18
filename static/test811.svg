@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="149.20859mm"
+   height="95.308731mm"
+   preserveAspectRatio="none"
+   viewBox="0 0 149.20859 95.308731"
+   version="1.1"
+   id="svg5886"
+   inkscape:version="0.92.1 r15371"
+   sodipodi:docname="test811.svg">
+  <defs
+     id="defs5880">
+    <linearGradient
+       gradientTransform="matrix(-0.26458333,0,0,0.26458333,-2.6010586,128.84803)"
+       y2="375.4238"
+       x2="295.8833"
+       y1="735.64551"
+       x1="295.8833"
+       gradientUnits="userSpaceOnUse"
+       id="SVGID_2_">
+      <stop
+         id="stop15"
+         style="stop-color:#E5DFC6"
+         offset="0" />
+      <stop
+         id="stop17"
+         style="stop-color:#EDE8D6"
+         offset="0.1131" />
+      <stop
+         id="stop19"
+         style="stop-color:#F2EEDF"
+         offset="0.2182" />
+      <stop
+         id="stop21"
+         style="stop-color:#E7ECDE"
+         offset="0.2667" />
+      <stop
+         id="stop23"
+         style="stop-color:#CBE5DD"
+         offset="0.3511" />
+      <stop
+         id="stop25"
+         style="stop-color:#9CDBDA"
+         offset="0.4616" />
+      <stop
+         id="stop27"
+         style="stop-color:#5CCDD6"
+         offset="0.5922" />
+      <stop
+         id="stop29"
+         style="stop-color:#2EC3D3"
+         offset="0.6788" />
+      <stop
+         id="stop31"
+         style="stop-color:#0BABC4"
+         offset="0.8591" />
+      <stop
+         id="stop33"
+         style="stop-color:#00A4BF"
+         offset="0.9091" />
+      <stop
+         id="stop35"
+         style="stop-color:#04A5C0"
+         offset="0.9217" />
+      <stop
+         id="stop37"
+         style="stop-color:#11A9C3"
+         offset="0.9352" />
+      <stop
+         id="stop39"
+         style="stop-color:#27B0C7"
+         offset="0.9491" />
+      <stop
+         id="stop41"
+         style="stop-color:#45B9CD"
+         offset="0.9634" />
+      <stop
+         id="stop43"
+         style="stop-color:#6CC5D5"
+         offset="0.9779" />
+      <stop
+         id="stop45"
+         style="stop-color:#9AD3DF"
+         offset="0.9924" />
+      <stop
+         id="stop47"
+         style="stop-color:#B6DBE5"
+         offset="1" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="466.25469"
+     inkscape:cy="660.111"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1360"
+     inkscape:window-height="737"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5883">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(155.4912,-228.17897)">
+    <rect
+       style="fill:url(#SVGID_2_);stroke-width:0.26458332"
+       id="rect50"
+       height="95.308731"
+       width="149.20859"
+       y="228.17897"
+       x="-155.4912" />
+  </g>
+</svg>

@@ -1,0 +1,52 @@
+//
+// Alerts
+// --------------------------------------------------
+
+.alert-window {
+	max-width:86%;
+}
+
+.alert-dismissable, // The misspelled .alert-dismissable was deprecated in 3.2.0.
+.alert-dismissible {
+  .close {
+    top: -10px;
+    right: -28px;
+    width:24px;
+    height:24px;
+    line-height:24px;
+    font-size:24px;
+    border-radius:50%;
+    .opacity(.3);
+    
+    &:focus,
+    &:hover {
+      color:#fff;
+      text-shadow:none;
+      .opacity(1);
+    }
+  }
+}
+
+.alert-success {
+  .close:hover {
+    background-color:@material-success;
+  }
+}
+
+.alert-info {
+  .close:hover {
+    background-color:@material-info;
+  }
+}
+
+.alert-warning {
+  .close:hover {
+    background-color:@material-warning;
+  }
+}
+
+.alert-danger {
+  .close:hover {
+    background-color:@material-danger;
+  }
+}

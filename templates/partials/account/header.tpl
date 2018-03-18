@@ -5,7 +5,7 @@
 		<!-- IF picture -->
 		<img src="{picture}" class="avatar avatar-xl avatar-rounded" />
 		<!-- ELSE -->
-		<div class="avatar avatar-xl avatar-rounded" style="background-color: {icon:bgColor};" title="{username}">{icon:text}</div>
+		<div class="avatar avatar-xl avatar-rounded" style="background: {icon:bgColorImage};" title="{username}">{icon:text}</div>
 		<!-- ENDIF picture -->
 		<i component="user/status" class="fa fa-circle status {status}" title="[[global:{status}]]"></i>
 
