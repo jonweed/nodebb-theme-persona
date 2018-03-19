@@ -1,6 +1,6 @@
 <div component="breadcrumb">
 	<!-- IF breadcrumbs.length -->
-	<ol class="breadcrumb">
+	<ol class="ro-breadcrumb">
 		<li class="first menu-toggle visible-xs" data-box="breadcrumb/list" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb"><a><span itemprop="title"><i class="fa fa-th"></i></span></a></li>
 		<!-- BEGIN breadcrumbs -->
 		<!-- IF !@last -->

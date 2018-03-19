@@ -84,7 +84,9 @@
 	}
 }
 
-body {
+#panel { background:none; }
+
+body, #panel {
 	&:before {
 		content: ' ';
 		position: fixed;
@@ -97,6 +99,7 @@ body {
 		will-change: transform;
 		width: 100vw;
 		height: 100vh;
+		z-index:-1;
 	}
 }
 
@@ -287,6 +290,7 @@ body {
 		background-repeat: no-repeat;
 		background-color: #D7E9F0;
 		box-shadow: 0 2px 3px 0 rgba(0,0,0,.15);
+		border:1px groove #f8f8f8;
 
 		> .ro-bar {
 			display: flex;
